@@ -45,7 +45,9 @@ namespace Alternity {
         using (StreamReader rd = new StreamReader(ArmorFileName)) {
           string line = rd.ReadLine();
           while (line != null) {
-            Items.Add(new Armor(line));
+            if (!line.Trim().StartsWith("//")) {
+              Items.Add(new Armor(line));
+            }
             line = rd.ReadLine();
           }
         }
