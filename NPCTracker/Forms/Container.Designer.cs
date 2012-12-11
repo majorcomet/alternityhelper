@@ -42,6 +42,9 @@ namespace Alternity {
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.diceRollerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.setAllActionPhasesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
       this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
       this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +55,6 @@ namespace Alternity {
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.phaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-      this.setAllActionPhasesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-      this.diceRollerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -138,10 +138,33 @@ namespace Alternity {
       this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
       this.toolsToolStripMenuItem.Text = "&Tools";
       // 
+      // diceRollerToolStripMenuItem1
+      // 
+      this.diceRollerToolStripMenuItem1.Name = "diceRollerToolStripMenuItem1";
+      this.diceRollerToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+      this.diceRollerToolStripMenuItem1.Size = new System.Drawing.Size(234, 22);
+      this.diceRollerToolStripMenuItem1.Tag = "Keep";
+      this.diceRollerToolStripMenuItem1.Text = "&Dice Roller";
+      this.diceRollerToolStripMenuItem1.Click += new System.EventHandler(this.diceRollerToolStripMenuItem_Click);
+      // 
+      // setAllActionPhasesToolStripMenuItem1
+      // 
+      this.setAllActionPhasesToolStripMenuItem1.Name = "setAllActionPhasesToolStripMenuItem1";
+      this.setAllActionPhasesToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+      this.setAllActionPhasesToolStripMenuItem1.Size = new System.Drawing.Size(234, 22);
+      this.setAllActionPhasesToolStripMenuItem1.Tag = "Keep";
+      this.setAllActionPhasesToolStripMenuItem1.Text = "Set All Action &Phases...";
+      this.setAllActionPhasesToolStripMenuItem1.Click += new System.EventHandler(this.setAllActionPhasesToolStripMenuItem_Click);
+      // 
+      // toolStripMenuItem6
+      // 
+      this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+      this.toolStripMenuItem6.Size = new System.Drawing.Size(231, 6);
+      // 
       // editToolStripMenuItem
       // 
       this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-      this.editToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+      this.editToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
       this.editToolStripMenuItem.Tag = "Keep";
       this.editToolStripMenuItem.Text = "&Edit Tools...";
       this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
@@ -149,7 +172,7 @@ namespace Alternity {
       // toolStripMenuItem5
       // 
       this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-      this.toolStripMenuItem5.Size = new System.Drawing.Size(222, 6);
+      this.toolStripMenuItem5.Size = new System.Drawing.Size(231, 6);
       this.toolStripMenuItem5.Tag = "Keep";
       // 
       // windowToolStripMenuItem
@@ -209,29 +232,6 @@ namespace Alternity {
       this.openFileDialog1.RestoreDirectory = true;
       this.openFileDialog1.SupportMultiDottedExtensions = true;
       this.openFileDialog1.Title = "Choose Character Template to Load";
-      // 
-      // setAllActionPhasesToolStripMenuItem1
-      // 
-      this.setAllActionPhasesToolStripMenuItem1.Name = "setAllActionPhasesToolStripMenuItem1";
-      this.setAllActionPhasesToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-      this.setAllActionPhasesToolStripMenuItem1.Size = new System.Drawing.Size(225, 22);
-      this.setAllActionPhasesToolStripMenuItem1.Tag = "Keep";
-      this.setAllActionPhasesToolStripMenuItem1.Text = "Set All Action &Phases";
-      this.setAllActionPhasesToolStripMenuItem1.Click += new System.EventHandler(this.setAllActionPhasesToolStripMenuItem_Click);
-      // 
-      // toolStripMenuItem6
-      // 
-      this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-      this.toolStripMenuItem6.Size = new System.Drawing.Size(222, 6);
-      // 
-      // diceRollerToolStripMenuItem1
-      // 
-      this.diceRollerToolStripMenuItem1.Name = "diceRollerToolStripMenuItem1";
-      this.diceRollerToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-      this.diceRollerToolStripMenuItem1.Size = new System.Drawing.Size(225, 22);
-      this.diceRollerToolStripMenuItem1.Tag = "Keep";
-      this.diceRollerToolStripMenuItem1.Text = "&Dice Roller";
-      this.diceRollerToolStripMenuItem1.Click += new System.EventHandler(this.diceRollerToolStripMenuItem_Click);
       // 
       // Container
       // 
