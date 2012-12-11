@@ -14,6 +14,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,8 +59,24 @@ namespace Alternity {
       }
     }
 
+    private Regex NumbersOnly = new Regex("^[0-9]*$");
+    private Regex NotNumbers = new Regex("[^0-9]");
     private void NumberBox_TextChanged(object sender, EventArgs e) {
       NumberRadio.Checked = true;
+      if (!NumbersOnly.IsMatch(NumberBox.Text)) {
+        MessageBox.Show("Numbers only, please", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        NumberBox.Text = NotNumbers.Replace(NumberBox.Text, "");
+      }
+    }
+
+    private void NumberBox_KeyDown(object sender, KeyEventArgs e) {
+      if (e.KeyCode == Keys.Up) {
+        NumberRadio.Focus();
+        e.Handled = true;
+      } else if (e.KeyCode == Keys.Down) {
+        AmazingRadio.Focus();
+        e.Handled = true;
+      }
     }
   }
 }

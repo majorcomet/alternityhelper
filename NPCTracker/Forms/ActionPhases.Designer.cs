@@ -55,21 +55,22 @@
       // 
       // NumberBox
       // 
-      this.NumberBox.Location = new System.Drawing.Point(70, 115);
+      this.NumberBox.Location = new System.Drawing.Point(52, 115);
       this.NumberBox.MaxLength = 2;
       this.NumberBox.Name = "NumberBox";
       this.NumberBox.Size = new System.Drawing.Size(31, 20);
       this.NumberBox.TabIndex = 5;
       this.NumberBox.TextChanged += new System.EventHandler(this.NumberBox_TextChanged);
+      this.NumberBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NumberBox_KeyDown);
       // 
       // NumberRadio
       // 
       this.NumberRadio.AutoSize = true;
       this.NumberRadio.Location = new System.Drawing.Point(6, 115);
       this.NumberRadio.Name = "NumberRadio";
-      this.NumberRadio.Size = new System.Drawing.Size(65, 17);
+      this.NumberRadio.Size = new System.Drawing.Size(46, 17);
       this.NumberRadio.TabIndex = 4;
-      this.NumberRadio.Text = "Number:";
+      this.NumberRadio.Text = "Roll:";
       this.NumberRadio.UseVisualStyleBackColor = true;
       // 
       // MarginalRadio
