@@ -1,4 +1,10 @@
-﻿PISTOLS|-
+﻿//
+// File format:
+//     Display|Result
+//  Display: What will display in the list box to describe an item.
+//  Result: What will result when this item is selected.
+//
+PISTOLS|-
 ◦  9mm Charge Pistol           |9mm Charge Pistol    0  --  8/16/60       HI/O  d4+1w/d6+1w/d4m    F
 ◦  9mm 0G Pistol               |9mm 0G Pistol        0  --  4/10/40       HI/O  d4+1w/d6+1w/d4m    F
 ◦  11mm Charge Pistol          |11mm Charge Pistol   0  --  10/20/80      HI/O  d4+2w/d6+2w/d4+1m  F
