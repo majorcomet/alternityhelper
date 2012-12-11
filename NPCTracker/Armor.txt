@@ -1,17 +1,17 @@
-﻿Soft - Battle Vest           |Battle Vest  O●0  d6-3 ● d6+2 ● d4-2
-Soft - Battle Jacket         |Battle Jacket  O●+1  d6-1 ● d4+1 ● d4-1
-Soft - CF Long Coat          |CF Long Coat  O●0  d4 ● d4 ● d6-2
-Soft - CF Short Coat         |CF Short Coat  O●0  d4-1 ● d4-1 ● d6-3
-Soft - CF Soft Suit          |CF Soft Suit  O●0  d6 ● d6 ● d6-1
--|-
-Hard - Assault Gear          |Assault Gear  O●+2  d6-1 ● d6 ● d6-1
-Hard - Attack Armor          |Attack Armor  O●+2  d4+1 ● d6+1 ● d6-1
-Hard - Cerametal Armor       |Cerametal Armor  O●+2  d6+1 ● d8+1 ● d6
--|-
-Hard - Attack Armor, Powered |Atk Armor, Pow  G●+2  d6+1 ● d6+2 ● d6
-Hard - Body Tank             |Body Tank  G●+4  2d4+1 ● 2d4+1 ● 2d4
-Hard - Body Tank, Recon      |Bdy Tank, Recon  G●+3  2d4 ● 2d4 ● d6+2
-Hard - Body Tank, 0G         |Body Tank, 0G  G●+5  3d4 ● 3d4 ● 2d4+1
--|-
-ESuit - Soft E-Suit          |Soft ESuit  O●+1  d6-3 ● d6-2 ● d4-2
-ESuit - Hard                 |Hard ESuit  O●+2  d6-1 ● d6 ● d6-1
+﻿Soft - Battle Vest               |Battle Vest  O●0  d6-3 ● d6+2 ● d4-2
+Soft - Battle Jacket             |Battle Jacket  O●+1  d6-1 ● d4+1 ● d4-1
+Soft - CF Long Coat              |CF Long Coat  O●0  d4 ● d4 ● d6-2
+Soft - CF Short Coat             |CF Short Coat  O●0  d4-1 ● d4-1 ● d6-3
+Soft - CF Soft Suit              |CF Soft Suit  O●0  d6 ● d6 ● d6-1
+-|-                              
+Hard - Assault Gear              |Assault Gear  O●+2  d6-1 ● d6 ● d6-1
+Hard - Attack Armor              |Attack Armor  O●+2  d4+1 ● d6+1 ● d6-1
+Hard - Cerametal Armor           |Cerametal Armor  O●+2  d6+1 ● d8+1 ● d6
+-|-                              
+Hard - Attack Armor, Powered     |Atk Armor, Pow  G●+2  d6+1 ● d6+2 ● d6
+Hard - Body Tank                 |Body Tank  G●+4  2d4+1 ● 2d4+1 ● 2d4
+Hard - Body Tank, Recon          |Bdy Tank, Recon  G●+3  2d4 ● 2d4 ● d6+2
+Hard - Body Tank, 0G             |Body Tank, 0G  G●+5  3d4 ● 3d4 ● 2d4+1
+-|-                              
+ESuit - Soft E-Suit              |Soft ESuit  O●+1  d6-3 ● d6-2 ● d4-2
+ESuit - Hard                     |Hard ESuit  O●+2  d6-1 ● d6 ● d6-1
