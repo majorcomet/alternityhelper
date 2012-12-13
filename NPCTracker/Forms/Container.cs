@@ -83,10 +83,12 @@ In Numeric Text Boxes:
     private void openToolStripMenuItem_Click(object sender, EventArgs e) {
       openFileDialog1.InitialDirectory = lastLocation;
       if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-        MainForm newMain = new MainForm(openFileDialog1.FileName);
-        newMain.MdiParent = this;
-        newMain.Show();
-        lastLocation = Path.GetDirectoryName(openFileDialog1.FileName);
+        foreach (var fileName in openFileDialog1.FileNames) {
+          MainForm newMain = new MainForm(fileName);
+          newMain.MdiParent = this;
+          newMain.Show();
+          lastLocation = Path.GetDirectoryName(fileName);
+        }
       }
     }
 

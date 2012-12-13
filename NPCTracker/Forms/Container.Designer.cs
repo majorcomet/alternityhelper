@@ -229,6 +229,7 @@ namespace Alternity {
       // 
       this.openFileDialog1.DefaultExt = "xml";
       this.openFileDialog1.Filter = "Alternity Character Files|*.xml";
+      this.openFileDialog1.Multiselect = true;
       this.openFileDialog1.RestoreDirectory = true;
       this.openFileDialog1.SupportMultiDottedExtensions = true;
       this.openFileDialog1.Title = "Choose Character Template to Load";
