@@ -1174,6 +1174,8 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
+		<row><td>altern_1_alternity_helper</td><td>andrew_1_andrew_barber</td><td>ALTERN~1|Alternity Helper</td><td/><td>1</td><td/></row>
+		<row><td>andrew_1_andrew_barber</td><td>ProgramMenuFolder</td><td>ANDREW~1|Andrew Barber</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -2767,7 +2769,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847633260</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847649037</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>1847645196</td></row>
@@ -3579,6 +3581,7 @@
 		<row><td>IDS_PROGMSG_XML_ROLLBACK_FILES</td><td>1033</td><td>Rolling back XML file changes...</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>1847649196</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Alternity Helper</td><td>0</td><td/><td>1847605068</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1847649196</td></row>
@@ -3867,8 +3870,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.AndrewBarber.com</td><td>0</td><td/><td>1847633260</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847633260</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.AndrewBarber.com</td><td>0</td><td/><td>1847649037</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847649037</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1847649196</td></row>
 	</table>
 
@@ -3977,6 +3980,8 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>_9862874DCDC14F6596129A2C2E6A29B1.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
+		<row><td>_EA02BD09ECAA432392BD35C5DCE57F41.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4109,7 +4114,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{0508B5B9-6060-4CE6-9CB2-DF5BA643959B}</td></row>
 		<row><td>ISUSSignature</td><td>{9F04E042-2627-472A-9401-2071FB8AAE91}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewSetupTypes,viewObjects,viewDependencies,viewAppV,viewUI</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4565,6 +4570,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>FileKey1</td><td>AlternityHelper.Primary_output</td><td/><td>andrew_1_andrew_barber</td><td>2</td></row>
+		<row><td>FileKey2</td><td>AlternityHelper.Primary_output</td><td/><td>altern_1_alternity_helper</td><td>2</td></row>
+		<row><td>_Built</td><td>AlternityHelper.Primary_output</td><td/><td>altern_1_alternity_helper</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4650,6 +4658,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>_Built</td><td>altern_1_alternity_helper</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>AlternityHelper.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
