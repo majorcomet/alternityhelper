@@ -51,6 +51,8 @@ namespace Alternity {
           SetNPC(npc);
         } catch (Exception ex) {
           MessageBox.Show(ex.Message, "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          SetNPC(new NPC());
+          LoadedFileName = "";
         }
     }
 
