@@ -27,3 +27,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.vssscc
 $tf*/
+Setup/Setup/Express/SingleImage/LogFiles/error
+Setup\Setup\Express\SingleImage\LogFiles*/
+*.htm
+Setup/Setup/Express/SingleImage/LogFiles/12-13-2012 12-37-56 PM.txt
