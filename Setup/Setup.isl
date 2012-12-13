@@ -343,7 +343,6 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>AlternityHelper.Content_Files</td><td>{386841F7-F08E-4FA3-9FCF-417EDB954CA5}</td><td>INSTALLDIR</td><td>2</td><td/><td>alternityhelper.content_file</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>AlternityHelper.Primary_output</td><td>{E55EAA3A-4EA9-495F-8E5D-3BA778265046}</td><td>INSTALLDIR</td><td>2</td><td/><td>alternityhelper.primary_outp</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NPCTracker_Library.Content_Files</td><td>{0B41E48E-622A-490A-927E-CE985DAE2019}</td><td>INSTALLDIR</td><td>2</td><td/><td>npctracker_library.content_f</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NPCTracker_Library.Primary_output</td><td>{3DBD9078-D125-441D-8747-92B26D596C1A}</td><td>INSTALLDIR</td><td>2</td><td/><td>npctracker_library.primary_o</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
@@ -1868,7 +1867,6 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>AlternityHelper.Content_Files</td></row>
 		<row><td>AlwaysInstall</td><td>AlternityHelper.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>NPCTracker_Library.Content_Files</td></row>
 		<row><td>AlwaysInstall</td><td>NPCTracker_Library.Primary_output</td></row>
 	</table>
 
@@ -1886,7 +1884,6 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>alternityhelper.content_file</td><td>AlternityHelper.Content_Files</td><td>AlternityHelper.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;AlternityHelper&gt;|ContentFiles</td><td>3</td><td/></row>
 		<row><td>alternityhelper.primary_outp</td><td>AlternityHelper.Primary_output</td><td>AlternityHelper.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;AlternityHelper&gt;|Built</td><td>3</td><td/></row>
-		<row><td>npctracker_library.content_f</td><td>NPCTracker_Library.Content_Files</td><td>NPCTracker Library.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;NPCTracker Library&gt;|ContentFiles</td><td>3</td><td/></row>
 		<row><td>npctracker_library.primary_o</td><td>NPCTracker_Library.Primary_output</td><td>NPCTracker Library.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;NPCTracker Library&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
@@ -2146,7 +2143,6 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>AlternityHelper.Content_Files</td><td/><td/><td>_3052FB26_4802_4E36_BA2B_27A06E12F5A5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>AlternityHelper.Primary_output</td><td/><td/><td>_4C0BE71D_E1D4_4F4D_AA72_6C385592E01A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NPCTracker_Library.Content_Files</td><td/><td/><td>_3609CD0F_F5E4_44E4_981A_2BA114267836_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NPCTracker_Library.Primary_output</td><td/><td/><td>_6B758D55_CECD_4DEB_8583_BCF80C730873_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
@@ -2771,7 +2767,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847632844</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847633260</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>1847645196</td></row>
@@ -3871,8 +3867,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1847649196</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.AndrewBarber.com</td><td>0</td><td/><td>1847632844</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847632844</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.AndrewBarber.com</td><td>0</td><td/><td>1847633260</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Andrew Barber</td><td>0</td><td/><td>1847633260</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1847649196</td></row>
 	</table>
 
@@ -4099,7 +4095,7 @@
 UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
-		<row><td>EnableSwidtag</td><td>1</td></row>
+		<row><td>EnableSwidtag</td><td>0</td></row>
 		<row><td>ISCompilerOption_CompileBeforeBuild</td><td>1</td></row>
 		<row><td>ISCompilerOption_Debug</td><td>0</td></row>
 		<row><td>ISCompilerOption_IncludePath</td><td/></row>
@@ -4113,7 +4109,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{0508B5B9-6060-4CE6-9CB2-DF5BA643959B}</td></row>
 		<row><td>ISUSSignature</td><td>{9F04E042-2627-472A-9401-2071FB8AAE91}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
