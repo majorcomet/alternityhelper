@@ -55,6 +55,7 @@ namespace Alternity {
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.phaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -79,6 +80,7 @@ namespace Alternity {
             this.openToolStripMenuItem,
             this.toolStripMenuItem4,
             this.helpToolStripMenuItem,
+            this.aboutToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -234,6 +236,13 @@ namespace Alternity {
       this.openFileDialog1.SupportMultiDottedExtensions = true;
       this.openFileDialog1.Title = "Choose Character Template to Load";
       // 
+      // aboutToolStripMenuItem
+      // 
+      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+      this.aboutToolStripMenuItem.Text = "&About";
+      this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+      // 
       // Container
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +286,6 @@ namespace Alternity {
     private System.Windows.Forms.ToolStripMenuItem diceRollerToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem setAllActionPhasesToolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+    private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
   }
 }
