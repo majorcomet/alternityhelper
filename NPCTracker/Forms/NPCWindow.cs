@@ -543,6 +543,8 @@ namespace Alternity {
           saveFileDialog1.InitialDirectory = dir;
           saveFileDialog1.FileName = LoadedFileName;
         }
+      } else {
+        saveFileDialog1.FileName = FixFileName(NPCNameBox.Text);
       }
       if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
         NPC npc = YankNPCObject();
@@ -557,6 +559,11 @@ namespace Alternity {
           MessageBox.Show(ex.Message, "Error Saving");
         }
       }
+    }
+
+    private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
+    private string FixFileName(string name) {
+      return NotValidFileName.Replace(name, "");
     }
 
     private void SetNPC(NPC npc) {
