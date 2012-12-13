@@ -41,13 +41,17 @@ namespace Alternity {
 
     public MainForm(string fileName)
       : this() {
-      LoadedFileName = fileName;
-      var formatter = new SoapFormatter();
-      NPC npc = null;
-      using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
-        npc = (NPC)formatter.Deserialize(fs);
-      }
-      SetNPC(npc);
+        try {
+          LoadedFileName = fileName;
+          var formatter = new SoapFormatter();
+          NPC npc = null;
+          using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
+            npc = (NPC)formatter.Deserialize(fs);
+          }
+          SetNPC(npc);
+        } catch (Exception ex) {
+          MessageBox.Show(ex.Message, "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     public MainForm(NPC npc)
