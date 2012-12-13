@@ -107,7 +107,7 @@ namespace Alternity {
       this.StunBox = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
       this.ActionsBox = new System.Windows.Forms.TextBox();
-      this.label13 = new System.Windows.Forms.Label();
+      this.ActionsLabel = new System.Windows.Forms.Label();
       this.ActionCheckAmazingBox = new System.Windows.Forms.TextBox();
       this.ActionCheckGoodBox = new System.Windows.Forms.TextBox();
       this.ActionCheckBox = new System.Windows.Forms.TextBox();
@@ -1010,15 +1010,17 @@ namespace Alternity {
       this.ActionsBox.Text = "2";
       this.ActionsBox.Enter += new System.EventHandler(this.Box_Enter);
       // 
-      // label13
+      // ActionsLabel
       // 
-      this.label13.AutoSize = true;
-      this.label13.Location = new System.Drawing.Point(558, 6);
-      this.label13.Name = "label13";
-      this.label13.Size = new System.Drawing.Size(45, 13);
-      this.label13.TabIndex = 10;
-      this.label13.Text = "Actions:";
-      this.toolTip1.SetToolTip(this.label13, "Number of Actions");
+      this.ActionsLabel.AutoSize = true;
+      this.ActionsLabel.Location = new System.Drawing.Point(558, 6);
+      this.ActionsLabel.Name = "ActionsLabel";
+      this.ActionsLabel.Size = new System.Drawing.Size(45, 13);
+      this.ActionsLabel.TabIndex = 10;
+      this.ActionsLabel.Tag = "0";
+      this.ActionsLabel.Text = "Actions:";
+      this.toolTip1.SetToolTip(this.ActionsLabel, "Number of Actions (0 extra)");
+      this.ActionsLabel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ActionsLabel_Click);
       // 
       // ActionCheckAmazingBox
       // 
@@ -1474,7 +1476,7 @@ namespace Alternity {
       this.Controls.Add(this.WoundBox);
       this.Controls.Add(this.label6);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.label13);
+      this.Controls.Add(this.ActionsLabel);
       this.Controls.Add(this.StunPanel);
       this.Controls.Add(this.INTBox);
       this.Controls.Add(this.DEXBox);
@@ -1586,7 +1588,7 @@ namespace Alternity {
     private System.Windows.Forms.TextBox StunBox;
     private System.Windows.Forms.Label label14;
     private System.Windows.Forms.TextBox ActionsBox;
-    private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.Label ActionsLabel;
     private System.Windows.Forms.TextBox ActionCheckAmazingBox;
     private System.Windows.Forms.TextBox ActionCheckGoodBox;
     private System.Windows.Forms.TextBox ActionCheckBox;

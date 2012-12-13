@@ -125,6 +125,7 @@ namespace Alternity {
         npc.IntelligenceResistMod = (int)INTResistLabel.Tag;
         npc.WillResistMod = (int)WILResistLabel.Tag;
         npc.ActionCheckAdjustment = int.Parse(this.ActionCheckAdjustmentBox.Text);
+        npc.ExtraActions = (int)ActionsLabel.Tag;
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
@@ -500,15 +501,20 @@ namespace Alternity {
     private void RecalcActions() {
       try {
         int conwil = int.Parse(CONBox.Text) + int.Parse(WILBox.Text);
+        int acts = 0;
         if (conwil <= 15) {
-          ActionsBox.Text = "1";
+          acts = 1;
         } else if (conwil <= 23) {
-          ActionsBox.Text = "2";
+          acts = 2;
         } else if (conwil <= 31) {
-          ActionsBox.Text = "3";
-        } else {
-          ActionsBox.Text = "4";
+          acts = 3;
+        } else if (conwil > 31) {
+          acts = 4;
         }
+        int adj = (int)ActionsLabel.Tag;
+        acts += adj;
+        ActionsBox.Text = acts.ToString();
+        toolTip1.SetToolTip(ActionsLabel, string.Format("Number of Actions ({0} extra)", adj));
       } catch {
       }
     }
@@ -571,6 +577,7 @@ namespace Alternity {
       DEXResistLabel.Tag = npc.DexterityResistMod;
       INTResistLabel.Tag = npc.IntelligenceResistMod;
       WILResistLabel.Tag = npc.WillResistMod;
+      ActionsLabel.Tag = npc.ExtraActions;
       LockedButton.Visible = npc.Locked;
       SetResistModLabelToolTip(STRResistLabel);
       SetResistModLabelToolTip(DEXResistLabel);
@@ -733,6 +740,20 @@ namespace Alternity {
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
+    }
+
+    private void ActionsLabel_Click(object sender, MouseEventArgs e) {
+      if (EditingLocked) return;
+      int adj = (int)ActionsLabel.Tag;
+      if (e.Button == System.Windows.Forms.MouseButtons.Left) {
+        adj++;
+      } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+        adj--;
+      }
+      if (adj < 0) adj = 0;
+      if (adj > 3) adj = 3;
+      ActionsLabel.Tag = adj;
+      RecalcActions();
     }
   }
 }

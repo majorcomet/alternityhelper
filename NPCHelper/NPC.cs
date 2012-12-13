@@ -42,6 +42,7 @@ namespace Alternity {
     public int WillResistMod { get; set; }
     public int ActionCheckAdjustment { get; set; }
     public bool Locked { get; set; }
+    public int ExtraActions { get; set; }
 
     public NPC() {
       Name = "";

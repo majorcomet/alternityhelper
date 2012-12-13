@@ -62,6 +62,7 @@ namespace Alternity {
   F7: Increase Mortal Damage
   (Use SHIFT to decrease damage)
   Click/Right-Click resistance mods to adjust *
+  Click/Right-Click Actions *label* to adjust *
 
 In Numeric Text Boxes:
   Up/Down: Adjust Numeric Value *
