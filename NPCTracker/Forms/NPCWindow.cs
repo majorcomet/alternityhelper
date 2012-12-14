@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Text.RegularExpressions;
@@ -41,19 +42,32 @@ namespace Alternity {
 
     public MainForm(string fileName)
       : this() {
+      LoadedFileName = fileName;
+      try {
+        XmlSerializer xmlser = new XmlSerializer(typeof(NPC));
+        NPC npc = null;
+        using (Stream st = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
+          npc = (NPC)xmlser.Deserialize(st);
+        }
+        SetNPC(npc);
+      } catch {
         try {
-          LoadedFileName = fileName;
           var formatter = new SoapFormatter();
           NPC npc = null;
           using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
             npc = (NPC)formatter.Deserialize(fs);
           }
           SetNPC(npc);
+          XmlSerializer xmlser = new XmlSerializer(typeof(NPC));
+           using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
+            xmlser.Serialize(st, npc);
+          }
         } catch (Exception ex) {
           MessageBox.Show(ex.Message, "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
           SetNPC(new NPC());
           LoadedFileName = "";
         }
+      }
     }
 
     public MainForm(NPC npc)
@@ -97,7 +111,7 @@ namespace Alternity {
         }
       }
     }
-    
+
     public NPC YankNPCObject() {
       NPC npc = new NPC();
       try {
@@ -368,7 +382,7 @@ namespace Alternity {
     }
 
     private void LockedButton_VisibleChanged(object sender, EventArgs e) {
-      bool locked  =LockedButton.Visible;
+      bool locked = LockedButton.Visible;
       UnlockedButton.Visible = !locked;
       foreach (var control in ControlsToReadOnly) {
         control.ReadOnly = locked;
@@ -558,10 +572,14 @@ namespace Alternity {
         NPC npc = YankNPCObject();
         string fileName = saveFileDialog1.FileName;
         try {
-          var binf = new SoapFormatter();
+          XmlSerializer xmlser = new XmlSerializer(typeof(NPC));
+          using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
+            xmlser.Serialize(st, npc);
+          }
+          /*var binf = new SoapFormatter();
           using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
             binf.Serialize(fs, npc);
-          }
+          }*/
           LoadedFileName = fileName;
         } catch (Exception ex) {
           MessageBox.Show(ex.Message, "Error Saving");
@@ -647,7 +665,7 @@ namespace Alternity {
         string.Format("({1}/{0}w)", WoundBox.Text, CountChecked(WoundPanel)) +
         " " +
         string.Format("({1}/{0}m)", MortalBox.Text, CountChecked(MortalPanel))
-        + (KOCheckBox.Checked ? " **KO**":"");
+        + (KOCheckBox.Checked ? " **KO**" : "");
     }
 
     private void STRBox_TextChanged(object sender, EventArgs e) {
