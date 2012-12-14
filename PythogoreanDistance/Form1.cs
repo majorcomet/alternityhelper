@@ -26,7 +26,7 @@ namespace PythogoreanDistance {
       double y1 = double.Parse(Y1Box.Text);
       double x2 = double.Parse(X2Box.Text);
       double y2 = double.Parse(Y2Box.Text);
-      double result = (((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+      double result = Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2);
       result = Math.Sqrt(result);
       DistanceBox.Text = result.ToString("0.0#");
     }
@@ -47,6 +47,8 @@ namespace PythogoreanDistance {
       if (e.KeyCode == Keys.Enter) {
         CalculateButton_Click(CalculateButton, null);
         e.Handled = true;
+      } else if (e.KeyCode == Keys.Escape) {
+        this.Close();
       }
     }
 
