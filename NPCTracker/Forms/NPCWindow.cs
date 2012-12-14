@@ -18,6 +18,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Xml;
 
 namespace Alternity {
 
@@ -49,6 +51,7 @@ namespace Alternity {
         using (Stream st = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
           npc = (NPC)xmlser.Deserialize(st);
         }
+        FixDeserializedNPC(npc);
         SetNPC(npc);
       } catch {
         try {
@@ -68,6 +71,11 @@ namespace Alternity {
           LoadedFileName = "";
         }
       }
+    }
+
+    private void FixDeserializedNPC(NPC npc) {
+      npc.Other = npc.Other.Replace("\n", "\r\n");
+      npc.Weapons = npc.Weapons.Replace("\n", "\r\n");
     }
 
     public MainForm(NPC npc)
