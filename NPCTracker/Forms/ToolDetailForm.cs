@@ -20,10 +20,12 @@ using System.Windows.Forms;
 
 namespace Alternity {
   public partial class ToolDetailForm : Form {
+    
     public ToolDetailForm() {
       InitializeComponent();
       openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     }
+    
     public ToolDetailForm(Alternity.Tool tool)
       : this() {
       this.Tool = tool;
@@ -31,32 +33,11 @@ namespace Alternity {
       PathBox.Text = this.Tool.Path;
       ArgsBox.Text = this.Tool.Args;
     }
+    
     public Tool Tool { get; set; }
-    private void ToolDetailForm_KeyUp(object sender, KeyEventArgs e) {
-      if (e.KeyCode == Keys.Enter) {
-        SaveButton_Click(SaveButton, null);
-        e.Handled = true;
-      } else if (e.KeyCode == Keys.Escape) {
-        DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        e.Handled = true;
-      }
-    }
 
-    private void SaveButton_Click(object sender, EventArgs e) {
-      if (string.IsNullOrWhiteSpace(TitleBox.Text)) {
-        MessageBox.Show("Title is required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
-      } else if (string.IsNullOrWhiteSpace(PathBox.Text)) {
-        MessageBox.Show("Path is required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
-      } else if (PathBox.Text.ToLower().StartsWith("http")) {
-        // do nothing; just avoid checking the path.
-      } else if (!File.Exists(PathBox.Text) && !Directory.Exists(PathBox.Text)) {
-        MessageBox.Show("Path does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
-      }
-      this.Tool = new Alternity.Tool { Path = PathBox.Text, Args = ArgsBox.Text, Title = TitleBox.Text };
-      DialogResult = System.Windows.Forms.DialogResult.OK;
+    private void Cancel_Button_Click(object sender, EventArgs e) {
+      this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
     }
 
     private void PathButton_Click(object sender, EventArgs e) {
@@ -80,8 +61,31 @@ namespace Alternity {
       }
     }
 
-    private void Cancel_Button_Click(object sender, EventArgs e) {
-      this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+    private void SaveButton_Click(object sender, EventArgs e) {
+      if (string.IsNullOrWhiteSpace(TitleBox.Text)) {
+        MessageBox.Show("Title is required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      } else if (string.IsNullOrWhiteSpace(PathBox.Text)) {
+        MessageBox.Show("Path is required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      } else if (PathBox.Text.ToLower().StartsWith("http")) {
+        // do nothing; just avoid checking the path.
+      } else if (!File.Exists(PathBox.Text) && !Directory.Exists(PathBox.Text)) {
+        MessageBox.Show("Path does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      }
+      this.Tool = new Alternity.Tool { Path = PathBox.Text, Args = ArgsBox.Text, Title = TitleBox.Text };
+      DialogResult = System.Windows.Forms.DialogResult.OK;
+    }
+
+    private void ToolDetailForm_KeyUp(object sender, KeyEventArgs e) {
+      if (e.KeyCode == Keys.Enter) {
+        SaveButton_Click(SaveButton, null);
+        e.Handled = true;
+      } else if (e.KeyCode == Keys.Escape) {
+        DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        e.Handled = true;
+      }
     }
   }
 }
