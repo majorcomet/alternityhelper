@@ -15,6 +15,10 @@ using System.Threading.Tasks;
 
 namespace Alternity {
   public class Tool {
+    public Tool() {
+      Title = Path = Args = "";
+    }
+
     public string Title { get; set; }
     public string Path { get; set; }
     public string Args { get; set; }
