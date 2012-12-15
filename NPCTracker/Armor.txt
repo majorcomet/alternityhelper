@@ -7,6 +7,8 @@
 //  Format of Result is up to you, but it has been formatted as follows by default:
 //      Name, Toughness●Action Penalty, LI●HI●En
 //
+//  The dash/empty entries are to provide some organization in the selection list.
+//
 Soft - Battle Vest               |Battle Vest  O●0  d6-3 ● d6+2 ● d4-2
 Soft - Battle Jacket             |Battle Jacket  O●+1  d6-1 ● d4+1 ● d4-1
 Soft - CF Long Coat              |CF Long Coat  O●0  d4 ● d4 ● d6-2

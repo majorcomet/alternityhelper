@@ -9,6 +9,8 @@
 //
 //  Values are aligned assuming monospaced font, which is what is used in the weapons box.
 //
+//  The dash/empty entries are to provide some organization in the selection list.
+//
 PISTOLS|-
 ◦  9mm Charge Pistol           |9mm Charge Pistol    0  -  8/16/60       HI/O  d4+1w/d6+1w/d4m    F
 ◦  9mm 0G Pistol               |9mm 0G Pistol        0  -  4/10/40       HI/O  d4+1w/d6+1w/d4m    F
