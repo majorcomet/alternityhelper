@@ -28,9 +28,9 @@ namespace Alternity {
     private TextBox[] actionBoxes;
     private TextBox[] ControlsToReadOnly;
     private string LoadedFileName = "";
+    private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
     private Regex NumbersAndSigns = new Regex("^[-+0-9]*$");
     private Regex NumbersOnly = new Regex("^[0-9]*$");
-
     public MainForm() {
       InitializeComponent();
       this.Load += MainForm_Load;
@@ -40,6 +40,7 @@ namespace Alternity {
       }
       ControlsToReadOnly = new TextBox[] { STRBox, DEXBox, CONBox, INTBox, WILBox, PERBox, ActionCheckBox, ActionCheckAdjustmentBox,
       StunBox, FatigueBox, WoundBox, MortalBox};
+      this.Tool = new Tool();
     }
 
     public MainForm(string fileName)
@@ -62,7 +63,7 @@ namespace Alternity {
           }
           SetNPC(npc);
           XmlSerializer xmlser = new XmlSerializer(typeof(NPC));
-           using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
+          using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
             xmlser.Serialize(st, npc);
           }
         } catch (Exception ex) {
@@ -73,21 +74,13 @@ namespace Alternity {
       }
     }
 
-    private void FixDeserializedNPC(NPC npc) {
-      npc.Other = npc.Other.Replace("\n", "\r\n");
-      npc.Weapons = npc.Weapons.Replace("\n", "\r\n");
-    }
-
     public MainForm(NPC npc)
       : this() {
       SetNPC(npc);
     }
 
-    public bool EditingLocked {
-      get { return LockedButton.Visible; }
-      set { LockedButton.Visible = value; }
-    }
     public int ChosenNumber { get; set; }
+
     public Phase ChosenPhase {
       set {
         switch (value) {
@@ -120,6 +113,12 @@ namespace Alternity {
       }
     }
 
+    public bool EditingLocked {
+      get { return LockedButton.Visible; }
+      set { LockedButton.Visible = value; }
+    }
+
+    public Tool Tool { get; set; }
     public NPC YankNPCObject() {
       NPC npc = new NPC();
       try {
@@ -150,6 +149,9 @@ namespace Alternity {
         npc.WillResistMod = (int)WILResistLabel.Tag;
         npc.ActionCheckAdjustment = int.Parse(this.ActionCheckAdjustmentBox.Text);
         npc.ExtraActions = (int)ActionsLabel.Tag;
+        npc.ToolTitle = this.Tool.Title;
+        npc.ToolPath = this.Tool.Path;
+        npc.ToolArgs = this.Tool.Args;
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
@@ -189,6 +191,20 @@ namespace Alternity {
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
+    }
+
+    private void ActionsLabel_Click(object sender, MouseEventArgs e) {
+      if (EditingLocked) return;
+      int adj = (int)ActionsLabel.Tag;
+      if (e.Button == System.Windows.Forms.MouseButtons.Left) {
+        adj++;
+      } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+        adj--;
+      }
+      if (adj < 0) adj = 0;
+      if (adj > 3) adj = 3;
+      ActionsLabel.Tag = adj;
+      RecalcActions();
     }
 
     private void ArmorSetButton_Click(object sender, EventArgs e) {
@@ -288,6 +304,14 @@ namespace Alternity {
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
+    }
+
+    private void FixDeserializedNPC(NPC npc) {
+      npc.Other = npc.Other.Replace("\n", "\r\n");
+      npc.Weapons = npc.Weapons.Replace("\n", "\r\n");
+    }
+    private string FixFileName(string name) {
+      return NotValidFileName.Replace(name, "");
     }
 
     private string GetResistMod(int value, Label label) {
@@ -584,22 +608,12 @@ namespace Alternity {
           using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
             xmlser.Serialize(st, npc);
           }
-          /*var binf = new SoapFormatter();
-          using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
-            binf.Serialize(fs, npc);
-          }*/
           LoadedFileName = fileName;
         } catch (Exception ex) {
           MessageBox.Show(ex.Message, "Error Saving");
         }
       }
     }
-
-    private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
-    private string FixFileName(string name) {
-      return NotValidFileName.Replace(name, "");
-    }
-
     private void SetNPC(NPC npc) {
       STRResistLabel.Tag = npc.StrengthResistMod;
       DEXResistLabel.Tag = npc.DexterityResistMod;
@@ -632,6 +646,17 @@ namespace Alternity {
       WILBox.Text = npc.Will.ToString();
       WoundBox.Text = npc.WoundMax.ToString();
       SetTaken(WoundPanel, npc.WoundTaken);
+      this.Tool.Title = npc.ToolTitle;
+      this.Tool.Path = npc.ToolPath;
+      this.Tool.Args = npc.ToolArgs;
+      SetToolLinkToolTip();
+    }
+    private void SetToolLinkToolTip() {
+      if (string.IsNullOrEmpty(this.Tool.Title) || string.IsNullOrEmpty(this.Tool.Path)) {
+        toolTip1.SetToolTip(ToolLink, "No tool set.");
+      } else {
+        toolTip1.SetToolTip(ToolLink, this.Tool.Title);
+      }
     }
 
     private void SetResistModLabelToolTip(Label label) {
@@ -719,6 +744,32 @@ namespace Alternity {
       }
     }
 
+    private void ToolLink_MouseDown(object sender, MouseEventArgs e) {
+      if (e.Button == System.Windows.Forms.MouseButtons.Left) {
+        if (!string.IsNullOrEmpty(this.Tool.Path)) {
+          try {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = this.Tool.Path;
+            if (!string.IsNullOrEmpty(this.Tool.Args)) {
+              psi.Arguments = this.Tool.Args;
+            }
+            Process.Start(psi);
+          } catch (Exception ex) {
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          }
+        } else {
+          MessageBox.Show("No tool set. Right-Click to set one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+      } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+        using (ToolDetailForm win = new ToolDetailForm(this.Tool)) {
+          if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+            this.Tool = win.Tool;
+            SetToolLinkToolTip();
+          }
+        }
+      }
+    }
+
     private void TurnRed(TextBox box) {
       foreach (var bx in actionBoxes) {
         bx.BackColor = (Color)bx.Tag;
@@ -768,20 +819,6 @@ namespace Alternity {
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
       }
-    }
-
-    private void ActionsLabel_Click(object sender, MouseEventArgs e) {
-      if (EditingLocked) return;
-      int adj = (int)ActionsLabel.Tag;
-      if (e.Button == System.Windows.Forms.MouseButtons.Left) {
-        adj++;
-      } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
-        adj--;
-      }
-      if (adj < 0) adj = 0;
-      if (adj > 3) adj = 3;
-      ActionsLabel.Tag = adj;
-      RecalcActions();
     }
   }
 }
