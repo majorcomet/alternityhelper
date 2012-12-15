@@ -145,6 +145,7 @@ namespace Alternity {
       this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
       this.OtherBox = new System.Windows.Forms.TextBox();
       this.ActionCheckAdjustmentBox = new System.Windows.Forms.TextBox();
+      this.ToolLink = new System.Windows.Forms.LinkLabel();
       this.MortalPanel.SuspendLayout();
       this.FatiguePanel.SuspendLayout();
       this.WoundPanel.SuspendLayout();
@@ -1000,7 +1001,7 @@ namespace Alternity {
       // 
       // ActionsBox
       // 
-      this.ActionsBox.Location = new System.Drawing.Point(604, 3);
+      this.ActionsBox.Location = new System.Drawing.Point(579, 3);
       this.ActionsBox.MaxLength = 2;
       this.ActionsBox.Name = "ActionsBox";
       this.ActionsBox.ReadOnly = true;
@@ -1013,7 +1014,7 @@ namespace Alternity {
       // ActionsLabel
       // 
       this.ActionsLabel.AutoSize = true;
-      this.ActionsLabel.Location = new System.Drawing.Point(558, 6);
+      this.ActionsLabel.Location = new System.Drawing.Point(533, 6);
       this.ActionsLabel.Name = "ActionsLabel";
       this.ActionsLabel.Size = new System.Drawing.Size(45, 13);
       this.ActionsLabel.TabIndex = 10;
@@ -1024,7 +1025,7 @@ namespace Alternity {
       // 
       // ActionCheckAmazingBox
       // 
-      this.ActionCheckAmazingBox.Location = new System.Drawing.Point(490, 3);
+      this.ActionCheckAmazingBox.Location = new System.Drawing.Point(465, 3);
       this.ActionCheckAmazingBox.Name = "ActionCheckAmazingBox";
       this.ActionCheckAmazingBox.ReadOnly = true;
       this.ActionCheckAmazingBox.Size = new System.Drawing.Size(20, 20);
@@ -1035,7 +1036,7 @@ namespace Alternity {
       // 
       // ActionCheckGoodBox
       // 
-      this.ActionCheckGoodBox.Location = new System.Drawing.Point(467, 3);
+      this.ActionCheckGoodBox.Location = new System.Drawing.Point(442, 3);
       this.ActionCheckGoodBox.Name = "ActionCheckGoodBox";
       this.ActionCheckGoodBox.ReadOnly = true;
       this.ActionCheckGoodBox.Size = new System.Drawing.Size(20, 20);
@@ -1046,7 +1047,7 @@ namespace Alternity {
       // 
       // ActionCheckBox
       // 
-      this.ActionCheckBox.Location = new System.Drawing.Point(444, 3);
+      this.ActionCheckBox.Location = new System.Drawing.Point(419, 3);
       this.ActionCheckBox.MaxLength = 2;
       this.ActionCheckBox.Name = "ActionCheckBox";
       this.ActionCheckBox.Size = new System.Drawing.Size(20, 20);
@@ -1060,7 +1061,7 @@ namespace Alternity {
       // 
       // ActionCheckPlusBox
       // 
-      this.ActionCheckPlusBox.Location = new System.Drawing.Point(417, 3);
+      this.ActionCheckPlusBox.Location = new System.Drawing.Point(392, 3);
       this.ActionCheckPlusBox.Name = "ActionCheckPlusBox";
       this.ActionCheckPlusBox.ReadOnly = true;
       this.ActionCheckPlusBox.Size = new System.Drawing.Size(24, 20);
@@ -1072,7 +1073,7 @@ namespace Alternity {
       // label12
       // 
       this.label12.AutoSize = true;
-      this.label12.Location = new System.Drawing.Point(344, 6);
+      this.label12.Location = new System.Drawing.Point(319, 6);
       this.label12.Name = "label12";
       this.label12.Size = new System.Drawing.Size(71, 13);
       this.label12.TabIndex = 3;
@@ -1263,7 +1264,7 @@ namespace Alternity {
       // 
       this.NPCNameBox.Location = new System.Drawing.Point(36, 3);
       this.NPCNameBox.Name = "NPCNameBox";
-      this.NPCNameBox.Size = new System.Drawing.Size(285, 20);
+      this.NPCNameBox.Size = new System.Drawing.Size(261, 20);
       this.NPCNameBox.TabIndex = 1;
       this.NPCNameBox.TextChanged += new System.EventHandler(this.NPCNameBox_TextChanged);
       this.NPCNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
@@ -1280,9 +1281,9 @@ namespace Alternity {
       // 
       // ArmorBox
       // 
-      this.ArmorBox.Location = new System.Drawing.Point(386, 28);
+      this.ArmorBox.Location = new System.Drawing.Point(374, 28);
       this.ArmorBox.Name = "ArmorBox";
-      this.ArmorBox.Size = new System.Drawing.Size(238, 20);
+      this.ArmorBox.Size = new System.Drawing.Size(250, 20);
       this.ArmorBox.TabIndex = 29;
       this.ArmorBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
       // 
@@ -1292,7 +1293,7 @@ namespace Alternity {
       this.OtherInfoButton.FlatAppearance.BorderSize = 0;
       this.OtherInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.OtherInfoButton.Image = global::Alternity.Properties.Resources.Notes;
-      this.OtherInfoButton.Location = new System.Drawing.Point(321, 1);
+      this.OtherInfoButton.Location = new System.Drawing.Point(297, 1);
       this.OtherInfoButton.Name = "OtherInfoButton";
       this.OtherInfoButton.Size = new System.Drawing.Size(22, 22);
       this.OtherInfoButton.TabIndex = 2;
@@ -1320,7 +1321,7 @@ namespace Alternity {
       this.ArmorSetButton.FlatAppearance.BorderSize = 0;
       this.ArmorSetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.ArmorSetButton.Image = global::Alternity.Properties.Resources.Shield;
-      this.ArmorSetButton.Location = new System.Drawing.Point(362, 25);
+      this.ArmorSetButton.Location = new System.Drawing.Point(350, 25);
       this.ArmorSetButton.Name = "ArmorSetButton";
       this.ArmorSetButton.Size = new System.Drawing.Size(22, 22);
       this.ArmorSetButton.TabIndex = 28;
@@ -1345,7 +1346,7 @@ namespace Alternity {
       // label8
       // 
       this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(511, 6);
+      this.label8.Location = new System.Drawing.Point(486, 6);
       this.label8.Name = "label8";
       this.label8.Size = new System.Drawing.Size(25, 13);
       this.label8.TabIndex = 8;
@@ -1426,7 +1427,7 @@ namespace Alternity {
       // 
       // ActionCheckAdjustmentBox
       // 
-      this.ActionCheckAdjustmentBox.Location = new System.Drawing.Point(537, 3);
+      this.ActionCheckAdjustmentBox.Location = new System.Drawing.Point(512, 3);
       this.ActionCheckAdjustmentBox.MaxLength = 2;
       this.ActionCheckAdjustmentBox.Name = "ActionCheckAdjustmentBox";
       this.ActionCheckAdjustmentBox.Size = new System.Drawing.Size(20, 20);
@@ -1437,11 +1438,22 @@ namespace Alternity {
       this.ActionCheckAdjustmentBox.Enter += new System.EventHandler(this.Box_Enter);
       this.ActionCheckAdjustmentBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NumberBox_KeyUp);
       // 
+      // ToolLink
+      // 
+      this.ToolLink.AutoSize = true;
+      this.ToolLink.Location = new System.Drawing.Point(599, 6);
+      this.ToolLink.Name = "ToolLink";
+      this.ToolLink.Size = new System.Drawing.Size(27, 13);
+      this.ToolLink.TabIndex = 49;
+      this.ToolLink.Text = "Link";
+      this.ToolLink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolLink_MouseDown);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(630, 173);
+      this.Controls.Add(this.ToolLink);
       this.Controls.Add(this.label9);
       this.Controls.Add(this.KOCheckBox);
       this.Controls.Add(this.LockedButton);
@@ -1627,5 +1639,6 @@ namespace Alternity {
     private System.Windows.Forms.Button LockedButton;
     private System.Windows.Forms.CheckBox KOCheckBox;
     private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.LinkLabel ToolLink;
   }
 }

@@ -651,14 +651,6 @@ namespace Alternity {
       this.Tool.Args = npc.ToolArgs;
       SetToolLinkToolTip();
     }
-    private void SetToolLinkToolTip() {
-      if (string.IsNullOrEmpty(this.Tool.Title) || string.IsNullOrEmpty(this.Tool.Path)) {
-        toolTip1.SetToolTip(ToolLink, "No tool set.");
-      } else {
-        toolTip1.SetToolTip(ToolLink, this.Tool.Title);
-      }
-    }
-
     private void SetResistModLabelToolTip(Label label) {
       int val = (int)label.Tag;
       string text = "Resist Mod Adjustment: " + val.ToString() + "\r\nClick to increase; right-click to decrease";
@@ -681,6 +673,13 @@ namespace Alternity {
       }
     }
 
+    private void SetToolLinkToolTip() {
+      if (string.IsNullOrEmpty(this.Tool.Title) || string.IsNullOrEmpty(this.Tool.Path)) {
+        toolTip1.SetToolTip(ToolLink, "No tool set.");
+      } else {
+        toolTip1.SetToolTip(ToolLink, this.Tool.Title);
+      }
+    }
     private void SetTopBoxesEnabled(bool enabled) {
       Control[] boxes = new Control[] {
         NPCNameBox, ActionCheckBox, STRBox, INTBox, DEXBox, PERBox, WILBox, CONBox, ArmorBox, ArmorSetButton, ActionCheckAdjustmentBox
