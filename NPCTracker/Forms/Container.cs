@@ -60,9 +60,10 @@ namespace Alternity {
   F5: Increase Stun Damage
   F6: Increase Wound Damage
   F7: Increase Mortal Damage
-  (Use SHIFT to decrease damage)
+    (Use with SHIFT to decrease damage)
   Click/Right-Click resistance mods to adjust *
-  Click/Right-Click Actions *label* to adjust *
+  Click/Right-Click Actions label to adjust *
+  Right-Click 'Link' to set info shortcut for NPC
 
 In Numeric Text Boxes:
   Up/Down: Adjust Numeric Value *
