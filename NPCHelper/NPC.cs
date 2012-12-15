@@ -43,6 +43,9 @@ namespace Alternity {
     public int ActionCheckAdjustment { get; set; }
     public bool Locked { get; set; }
     public int ExtraActions { get; set; }
+    public string ToolTitle { get; set; }
+    public string ToolPath { get; set; }
+    public string ToolArgs { get; set; }
 
     public NPC() {
       Name = "";
@@ -51,6 +54,7 @@ namespace Alternity {
       FatigueMax = MortalMax = 6;
       ActionCheck = 12;
       Armor =  Weapons = Other = "";
+      ToolTitle = ToolPath = ToolArgs = "";
     }
 
     /// <summary>
