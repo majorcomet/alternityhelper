@@ -4,84 +4,89 @@
 //  Display: What will display in the list box to describe an item.
 //  Result: What will result when this item is selected.
 //
+// Format of Result is up to you, but it has been formatted as follows by default:
+//    Name, Accuracy, dash to be replaced with skill values, Range, Type, Damage, Fire Type(s)
+//
+//  Values are aligned assuming monospaced font, which is what is used in the weapons box.
+//
 PISTOLS|-
-◦  9mm Charge Pistol           |9mm Charge Pistol    0  --  8/16/60       HI/O  d4+1w/d6+1w/d4m    F
-◦  9mm 0G Pistol               |9mm 0G Pistol        0  --  4/10/40       HI/O  d4+1w/d6+1w/d4m    F
-◦  11mm Charge Pistol          |11mm Charge Pistol   0  --  10/20/80      HI/O  d4+2w/d6+2w/d4+1m  F
-◦  15mm Sabot Pistol           |15mm Sabot Pistol    0  --  10/20/100     HI/O  2d4w/2d4+1w/d4+3m  F
-◦  Laser Pistol                |Laser Pistol        -1  --  20/40/200     En/O  d4+1w/d6+1w/d4m    F
-◦  Mass Pistol                 |Mass Pistol          0  --  2/6/12        En/G  d6w/d6+2w/d6m      F
-◦  Stutter Pistol              |Stutter Pistol       0  --  6/12/30       LI/O  d6+2s/d8+2s/d8+4s  F
+◦  9mm Charge Pistol           |9mm Charge Pistol    0  -  8/16/60       HI/O  d4+1w/d6+1w/d4m    F
+◦  9mm 0G Pistol               |9mm 0G Pistol        0  -  4/10/40       HI/O  d4+1w/d6+1w/d4m    F
+◦  11mm Charge Pistol          |11mm Charge Pistol   0  -  10/20/80      HI/O  d4+2w/d6+2w/d4+1m  F
+◦  15mm Sabot Pistol           |15mm Sabot Pistol    0  -  10/20/100     HI/O  2d4w/2d4+1w/d4+3m  F
+◦  Laser Pistol                |Laser Pistol        -1  -  20/40/200     En/O  d4+1w/d6+1w/d4m    F
+◦  Mass Pistol                 |Mass Pistol          0  -  2/6/12        En/G  d6w/d6+2w/d6m      F
+◦  Stutter Pistol              |Stutter Pistol       0  -  6/12/30       LI/O  d6+2s/d8+2s/d8+4s  F
  |-
 SMGS|-
-◦  Autoflec SMG                |Autoflec SMG         0  --  10/20/40      HI/O  d4w/d6w/d4m        FBA
-◦  9mm Charge SMG              |9mm Charge SMG      +1  --  20/40/100     HI/O  d4+1w/d6+1w/d4m    BA
-◦   Laser SMG                  |Laser SMG            0  --  20/80/200     En/O  d6w/d6+2w/d4m      BA
-◦  Stutter SMG                 |Stutter SMG          0  --  10/20/80      LI/O  d6+2s/d8+2s/d8+4s  BA
+◦  Autoflec SMG                |Autoflec SMG         0  -  10/20/40      HI/O  d4w/d6w/d4m        FBA
+◦  9mm Charge SMG              |9mm Charge SMG      +1  -  20/40/100     HI/O  d4+1w/d6+1w/d4m    BA
+◦   Laser SMG                  |Laser SMG            0  -  20/80/200     En/O  d6w/d6+2w/d4m      BA
+◦  Stutter SMG                 |Stutter SMG          0  -  10/20/80      LI/O  d6+2s/d8+2s/d8+4s  BA
  |-
 RIFLES|-
-◦  11mm Charge Rifle           |11mm Charge Rifle    0  --  80/160/400    HI/O  d6+1w/d6+3w/d6+1m  FBA
-◦  11mm, 0-G Rifle             |11mm 0G Rifle        0  --  30/60/200     HI/O  d6+1w/d6+3w/d6+1m  F
-◦  Laser Rifle                 |Laser Rifle         -1  --  100/400/1000  En/O  d6+1w/d6+3w/d4+1m  F
-◦  Mass Rifle                  |Mass Rifle           0  --  4/12/30       En/G  d6w/d8+1w/d6+1m    F
-◦  Quantum Rifle               |Quantum Rifle        0  --  80/200/500    En/O  d4+3w/d6+4w/d6+1m  FBA
-◦  Render Rifle                |Render Rifle         0  --  50/100/250    En/O  d6+1s/d6+1w/d4+1m  F
+◦  11mm Charge Rifle           |11mm Charge Rifle    0  -  80/160/400    HI/O  d6+1w/d6+3w/d6+1m  FBA
+◦  11mm, 0-G Rifle             |11mm 0G Rifle        0  -  30/60/200     HI/O  d6+1w/d6+3w/d6+1m  F
+◦  Laser Rifle                 |Laser Rifle         -1  -  100/400/1000  En/O  d6+1w/d6+3w/d4+1m  F
+◦  Mass Rifle                  |Mass Rifle           0  -  4/12/30       En/G  d6w/d8+1w/d6+1m    F
+◦  Quantum Rifle               |Quantum Rifle        0  -  80/200/500    En/O  d4+3w/d6+4w/d6+1m  FBA
+◦  Render Rifle                |Render Rifle         0  -  50/100/250    En/O  d6+1s/d6+1w/d4+1m  F
  |-
 HEAVY WEAPONS|-
-◦  Machine Gun                 |Heavy MG             0  --  100/400/1000  HI/G  d6+1w/2d4+2w/d8m   A
-◦  MG, Charge                  |Heavy Charge MG     -1  --  200/600/1200  HI/G  d8w/2d6w/2d4m      A
-◦  Rail Gun                    |Rail Gun            -1  --  150/500/1500  HI/G  d6w/d6+2w/d6m      BA
-◦  Arc Gun                     |Arc Gun             -1  --  20/40/100     En/G  d8+1s/d8w/d6+3w    F
-◦  Stutter Cannon              |Stutter Cannon      -1  --  20/40/80      LI/O  d6+2s/d8+3s/2d6+3s F
-◦  25mm Sabot Cannon           |25mm Sabot Cannon    0  --  100/200/2000  HI/G  d8w/d4+1m/d6+2m    F
-◦  Plasma Gun                  |Plasma Gun           0  --  40/80/200     En/G  d8w/d8+3w/d12+3w   F
-◦  Quantum Mini                |Quantum Minigun      0  --  100/250/800   En/G  d8+1w/d8+3w/d6m    FBA
+◦  Machine Gun                 |Heavy MG             0  -  100/400/1000  HI/G  d6+1w/2d4+2w/d8m   A
+◦  MG, Charge                  |Heavy Charge MG     -1  -  200/600/1200  HI/G  d8w/2d6w/2d4m      A
+◦  Rail Gun                    |Rail Gun            -1  -  150/500/1500  HI/G  d6w/d6+2w/d6m      BA
+◦  Arc Gun                     |Arc Gun             -1  -  20/40/100     En/G  d8+1s/d8w/d6+3w    F
+◦  Stutter Cannon              |Stutter Cannon      -1  -  20/40/80      LI/O  d6+2s/d8+3s/2d6+3s F
+◦  25mm Sabot Cannon           |25mm Sabot Cannon    0  -  100/200/2000  HI/G  d8w/d4+1m/d6+2m    F
+◦  Plasma Gun                  |Plasma Gun           0  -  40/80/200     En/G  d8w/d8+3w/d12+3w   F
+◦  Quantum Mini                |Quantum Minigun      0  -  100/250/800   En/G  d8+1w/d8+3w/d6m    FBA
  |-
 MELEE WEAPONS|-
-◦  Combat Knife                |Combat Knife         0  --                LI/O  d4+1w/d4+2w/d4+3w
-◦  Stun Baton                  |Stun Baton           0  --                En/O  d4+1s/d4+3s/d6+4s
-◦  Chainsword                  |Chainsword          +1  --                LI/O	d8+1w/d8+2w/d4+1m
-◦  Pulse Baton                 |Pulse Baton          0  --                En/O  d8s/d4+2w/d6+2w
-◦  Gravmace                    |Gravmace             0  --                LI/O  d8+2s/d6+2w/d8+2w
-◦  Power Cestus                |Power Cestus         0  --                LI/O  d4+2s/d4w/d4+1w
-◦  Tri-Staff                   |Tri-Staff           -1  --                En/O  d8+2w/3d4+1w/d6m
+◦  Combat Knife                |Combat Knife         0  -                LI/O  d4+1w/d4+2w/d4+3w
+◦  Stun Baton                  |Stun Baton           0  -                En/O  d4+1s/d4+3s/d6+4s
+◦  Chainsword                  |Chainsword          +1  -                LI/O	d8+1w/d8+2w/d4+1m
+◦  Pulse Baton                 |Pulse Baton          0  -                En/O  d8s/d4+2w/d6+2w
+◦  Gravmace                    |Gravmace             0  -                LI/O  d8+2s/d6+2w/d8+2w
+◦  Power Cestus                |Power Cestus         0  -                LI/O  d4+2s/d4w/d4+1w
+◦  Tri-Staff                   |Tri-Staff           -1  -                En/O  d8+2w/3d4+1w/d6m
  |-
 UNARMED|-
-◦  Brawl                       |Unarmed              0  --                LI/O  d4s/d4+1s/d4+2s
-◦  Power                       |Unarmed, Power       0  --                LI/O  d6s/d6+2/d4w
-◦  Weren                       |Unarmed, Weren       0  --                LI/O  d4w/d4+2w/d4m
+◦  Brawl                       |Unarmed              0  -                LI/O  d4s/d4+1s/d4+2s
+◦  Power                       |Unarmed, Power       0  -                LI/O  d6s/d6+2/d4w
+◦  Weren                       |Unarmed, Weren       0  -                LI/O  d4w/d4+2w/d4m
  |-
 PSIONICS|-
-◦  Mind Blast                  |Mind Blast           0  --  10/20/40
-◦  Pyrotechnics                |Pyrotechnics         0  --  10/20/30
+◦  Mind Blast                  |Mind Blast           0  -  10/20/40
+◦  Pyrotechnics                |Pyrotechnics         0  -  10/20/30
  |-
 FLINTLOCK|-
-◦  Flintlock Musket            |Musket              +2  --  20/40/100     HI/O  d6+1w/d6+3w/d6+1m  F
-◦  Flintlock Pistol            |Flintlock Pistol    +2  --  4/8/16        HI/O  d4+2w/d6+2w/d4+1m  F
-◦  Flintlock Weren Pistol      |Weren Pistol        +2  --  4/8/16        HI/O  d6+2w/d8+2w/d4+2m  F
+◦  Flintlock Musket            |Musket              +2  -  20/40/100     HI/O  d6+1w/d6+3w/d6+1m  F
+◦  Flintlock Pistol            |Flintlock Pistol    +2  -  4/8/16        HI/O  d4+2w/d6+2w/d4+1m  F
+◦  Flintlock Weren Pistol      |Weren Pistol        +2  -  4/8/16        HI/O  d6+2w/d8+2w/d4+2m  F
  |-
 GRENADES|-
-◦  Launcher                    |Grenade Launcher     0  --  50/200/350                             F
-◦   Concussion                 |Concussion Grenade  +1  --  2/4/6         LI/O  d6+2s/d4w/d4+1w
-◦   Incendiary                 |Incendiary Grenade  +1  --  2/4/6         En/G  d4w/d4+2w/d4+3w
-◦   Smoke                      |Smoke Grenade       +1  --        Good cover; 6m; d8+4rounds
-◦   Plasma                     |Plasma Grenade      +1  --  2/4/8         En/G  d4+2w/d6+2w/d4m
-◦   Stun                       |Stun Grenade        +1  --  2/4/10        En/O  d6s/d8s/d8+2s
-◦   Pulse                      |Pulse Grenade       +1  --  2/4/10        En/G  d4+2s/d6+2s/d8+2s
+◦  Launcher                    |Grenade Launcher     0  -  50/200/350                             F
+◦   Concussion                 |Concussion Grenade  +1  -  2/4/6         LI/O  d6+2s/d4w/d4+1w
+◦   Incendiary                 |Incendiary Grenade  +1  -  2/4/6         En/G  d4w/d4+2w/d4+3w
+◦   Smoke                      |Smoke Grenade       +1  -        Good cover; 6m; d8+4rounds
+◦   Plasma                     |Plasma Grenade      +1  -  2/4/8         En/G  d4+2w/d6+2w/d4m
+◦   Stun                       |Stun Grenade        +1  -  2/4/10        En/O  d6s/d8s/d8+2s
+◦   Pulse                      |Pulse Grenade       +1  -  2/4/10        En/G  d4+2s/d6+2s/d8+2s
  |-
 BANTAMS|-
-◦  Launcher                    |Bantam Launcher      0  --  100/800/4000                           F
-◦   Antiair                    |Antiair Bantam      -2  --  4/8/12        HI/G  d4w/d4+2w/d4m      F
-◦   Antipersonel               |Antipersonel Bantam  0  --  4/8/12        EN/O  d62/d6+2w/d8+2w    F
-◦   Antivehicle                |Antivehicle Bantam  -2  --  0/2/4         HI/G  d4+2w/d4+4w/d4+1m  F
+◦  Launcher                    |Bantam Launcher      0  -  100/800/4000                           F
+◦   Antiair                    |Antiair Bantam      -2  -  4/8/12        HI/G  d4w/d4+2w/d4m      F
+◦   Antipersonel               |Antipersonel Bantam  0  -  4/8/12        EN/O  d62/d6+2w/d8+2w    F
+◦   Antivehicle                |Antivehicle Bantam  -2  -  0/2/4         HI/G  d4+2w/d4+4w/d4+1m  F
  |-
 KROATH WEAPONS|-
-◦  Dark Plasma Rifle           |Dark Plasma Rifle    0  --  80/200/400    En/G  d8+1w/2d6w/2d6+3w  F
-◦  Dark Plasma Trigun          |Dark Plasma Trigun   0  --  100/250/600   En/G  d8+1w/2d6w/2d6+3w  BA
-◦  Filament Chain              |Filament Chain      -1  --                LI/G  d6+1w/2d4+1w/3d4+2w
+◦  Dark Plasma Rifle           |Dark Plasma Rifle    0  -  80/200/400    En/G  d8+1w/2d6w/2d6+3w  F
+◦  Dark Plasma Trigun          |Dark Plasma Trigun   0  -  100/250/600   En/G  d8+1w/2d6w/2d6+3w  BA
+◦  Filament Chain              |Filament Chain      -1  -                LI/G  d6+1w/2d4+1w/3d4+2w
  |-
 BLACKLASERS|-
-◦  Blacklaser Pistol           |Blacklaser Pistol   -1  --  20/40/200     En/O  d4+2w/d6+2w/d4m    F
-◦  Blacklaser SMG              |Blacklaser SMG       0  --  20/80/200     En/O  d6+1w/d6+3w/d4+1m  FBA
-◦  Blacklaser Rifle            |Blacklaser Rifle    -1  --  100/400/1000  En/O  d6+2w/d8+2w/d4+2m  BA
-◦  Blacklaser Cannon           |Blacklaser Cannon    0  --  70/160/600    En/G  d8+2w/d12+2w/d6+2m FBA
+◦  Blacklaser Pistol           |Blacklaser Pistol   -1  -  20/40/200     En/O  d4+2w/d6+2w/d4m    F
+◦  Blacklaser SMG              |Blacklaser SMG       0  -  20/80/200     En/O  d6+1w/d6+3w/d4+1m  FBA
+◦  Blacklaser Rifle            |Blacklaser Rifle    -1  -  100/400/1000  En/O  d6+2w/d8+2w/d4+2m  BA
+◦  Blacklaser Cannon           |Blacklaser Cannon    0  -  70/160/600    En/G  d8+2w/d12+2w/d6+2m FBA
