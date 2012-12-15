@@ -5,7 +5,7 @@
  * Licensed: CC BY-NC 3.0
  * http://creativecommons.org/licenses/by-nc/3.0/
  * 
- * More info at my blog: http://www.andrewbarber.com/post.aspx?id=e9252c9b-8ee0-4faa-b144-9f516dfd457a
+ * More info at the Github repo:  https://github.com/majorcomet/alternityhelper/wiki
  */
 using System;
 using System.IO;
