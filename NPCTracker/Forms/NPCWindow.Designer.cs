@@ -33,6 +33,7 @@ namespace Alternity {
     /// </summary>
     private void InitializeComponent() {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.SkillsBox = new System.Windows.Forms.TextBox();
       this.MortalPanel = new System.Windows.Forms.Panel();
       this.Mortal10 = new System.Windows.Forms.CheckBox();
@@ -1445,6 +1446,7 @@ namespace Alternity {
       this.ToolLink.Name = "ToolLink";
       this.ToolLink.Size = new System.Drawing.Size(27, 13);
       this.ToolLink.TabIndex = 49;
+      this.ToolLink.TabStop = true;
       this.ToolLink.Text = "Link";
       this.ToolLink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolLink_MouseDown);
       // 
@@ -1505,6 +1507,7 @@ namespace Alternity {
       this.Controls.Add(this.STRResistLabel);
       this.Controls.Add(this.OtherBox);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.Name = "MainForm";

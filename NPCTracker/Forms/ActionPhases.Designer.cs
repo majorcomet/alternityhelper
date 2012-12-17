@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionPhases));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.NumberBox = new System.Windows.Forms.TextBox();
       this.NumberRadio = new System.Windows.Forms.RadioButton();
@@ -147,12 +148,11 @@
       this.Controls.Add(this.OKButton);
       this.Controls.Add(this.groupBox1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ActionPhases";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Action Phase";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActionPhases_KeyDown);

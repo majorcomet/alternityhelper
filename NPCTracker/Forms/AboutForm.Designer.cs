@@ -91,7 +91,6 @@ namespace Alternity.Forms {
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "AboutForm";
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "About";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AboutForm_KeyDown);

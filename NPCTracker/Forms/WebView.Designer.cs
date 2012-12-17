@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebView));
       this.Browser = new System.Windows.Forms.WebBrowser();
       this.SuspendLayout();
       // 
@@ -43,10 +44,9 @@
       this.Controls.Add(this.Browser);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Alternity.Properties.Settings.Default, "MainLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Alternity.Properties.Settings.Default, "ClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Location = global::Alternity.Properties.Settings.Default.MainLocation;
       this.Name = "WebView";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.Text = "Web View";
       this.ResumeLayout(false);
 

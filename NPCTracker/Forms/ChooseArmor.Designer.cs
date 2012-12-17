@@ -32,6 +32,7 @@ namespace Alternity {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseArmor));
       this.ArmorList = new System.Windows.Forms.ListBox();
       this.OKButton = new System.Windows.Forms.Button();
       this.CancelButton = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@ namespace Alternity {
       this.Controls.Add(this.OKButton);
       this.Controls.Add(this.ArmorList);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MinimumSize = new System.Drawing.Size(217, 260);
       this.Name = "ChooseArmor";

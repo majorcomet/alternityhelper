@@ -32,6 +32,7 @@ namespace Alternity {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StringEditor));
       this.label1 = new System.Windows.Forms.Label();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
@@ -72,12 +73,11 @@ namespace Alternity {
       this.Controls.Add(this.textBox1);
       this.Controls.Add(this.label1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "StringEditor";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "String Editor";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StringEditor_KeyDown);

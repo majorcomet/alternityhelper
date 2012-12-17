@@ -33,6 +33,7 @@ namespace Alternity {
     /// </summary>
     private void InitializeComponent() {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolsWindow));
       this.ToolList = new System.Windows.Forms.ListBox();
       this.AddButton = new System.Windows.Forms.Button();
       this.DeleteButton = new System.Windows.Forms.Button();
@@ -112,12 +113,11 @@ namespace Alternity {
       this.Controls.Add(this.AddButton);
       this.Controls.Add(this.ToolList);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ToolsWindow";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Edit Tools";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolsWindow_KeyUp);

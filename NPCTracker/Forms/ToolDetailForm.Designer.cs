@@ -24,6 +24,7 @@
     /// </summary>
     private void InitializeComponent() {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolDetailForm));
       this.label1 = new System.Windows.Forms.Label();
       this.TitleBox = new System.Windows.Forms.TextBox();
       this.PathBox = new System.Windows.Forms.TextBox();
@@ -148,12 +149,11 @@
       this.Controls.Add(this.TitleBox);
       this.Controls.Add(this.label1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ToolDetailForm";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Add Tool Item";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ToolDetailForm_KeyUp);

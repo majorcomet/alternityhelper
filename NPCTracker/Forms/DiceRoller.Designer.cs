@@ -33,6 +33,7 @@ namespace Alternity {
     /// </summary>
     private void InitializeComponent() {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiceRoller));
       this.D4Check = new System.Windows.Forms.CheckBox();
       this.D6Check = new System.Windows.Forms.CheckBox();
       this.D12Check = new System.Windows.Forms.CheckBox();
@@ -310,11 +311,10 @@ namespace Alternity {
       this.Controls.Add(this.D4Check);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Alternity.Properties.Settings.Default, "RollerLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.Location = global::Alternity.Properties.Settings.Default.RollerLocation;
       this.Name = "DiceRoller";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.Text = "Dice Roller";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DiceRoller_KeyUp);
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
