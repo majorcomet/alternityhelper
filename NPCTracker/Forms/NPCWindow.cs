@@ -760,7 +760,7 @@ namespace Alternity {
           MessageBox.Show("No tool set. Right-Click to set one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
       } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
-        using (ToolDetailForm win = new ToolDetailForm(this.Tool)) {
+        using (ToolDetailForm win = new ToolDetailForm(this.Tool, "Info Link")) {
           if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
             this.Tool = win.Tool;
             SetToolLinkToolTip();

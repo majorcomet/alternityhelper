@@ -21,17 +21,21 @@ using System.Windows.Forms;
 namespace Alternity {
   public partial class ToolDetailForm : Form {
     
-    public ToolDetailForm() {
+    private ToolDetailForm() {
       InitializeComponent();
       openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     }
-    
-    public ToolDetailForm(Alternity.Tool tool)
+    public ToolDetailForm(string title)
+      : this() {
+      this.Text = title;
+    }
+    public ToolDetailForm(Alternity.Tool tool, string title)
       : this() {
       this.Tool = tool;
       TitleBox.Text = this.Tool.Title;
       PathBox.Text = this.Tool.Path;
       ArgsBox.Text = this.Tool.Args;
+      this.Text = title;
     }
     
     public Tool Tool { get; set; }

@@ -76,7 +76,7 @@ namespace Alternity {
     }
 
     private void AddButton_Click(object sender, EventArgs e) {
-      using (ToolDetailForm win = new ToolDetailForm()) {
+      using (ToolDetailForm win = new ToolDetailForm("Add Tool")) {
         if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
           ToolList.Items.Add(win.Tool);
         }
@@ -87,7 +87,7 @@ namespace Alternity {
       Tool tool = ToolList.SelectedItem as Tool;
       if (tool != null) {
         int idx = ToolList.SelectedIndex;
-        using (ToolDetailForm win = new ToolDetailForm(tool)) {
+        using (ToolDetailForm win = new ToolDetailForm(tool, "Edit Tool")) {
           if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
             tool.Args = win.Tool.Args;
             tool.Title = win.Tool.Title;
