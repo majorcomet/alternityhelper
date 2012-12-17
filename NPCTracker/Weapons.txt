@@ -30,21 +30,24 @@ RIFLES|-
 ◦  6mm Charge Autorifle        |6mm Chrge Autorifle -1  -  60/150/400    HI/O  d6w/2d4w/d4+1m     BA
 ◦  11mm Charge Rifle           |11mm Charge Rifle    0  -  80/160/400    HI/O  d6+1w/d6+3w/d6+1m  FBA
 ◦  11mm, 0-G Rifle             |11mm 0G Rifle        0  -  30/60/200     HI/O  d6+1w/d6+3w/d6+1m  F
+◦  15mm Sabot Rifle            |15mm Sabot Rifle     0  -  80/200/800    HI/O  d4+4w/2d4+2w/d6+3m F
 ◦  Laser Rifle                 |Laser Rifle         -1  -  100/400/1000  En/O  d6+1w/d6+3w/d4+1m  F
 ◦  Mass Rifle                  |Mass Rifle           0  -  4/12/30       En/G  d6w/d8+1w/d6+1m    F
 ◦  Quantum Rifle               |Quantum Rifle        0  -  80/200/500    En/O  d4+3w/d6+4w/d6+1m  FBA
 ◦  Render Rifle                |Render Rifle         0  -  50/100/250    En/O  d6+1s/d6+1w/d4+1m  F
-◦  15mm Sabot Rifle            |15mm Sabot Rifle     0  -  80/200/800    HI/O  d4+4w/2d4+2w/d6+3m F
+◦  Stutter Rifle               |Stutter Rifle       -1  -  20/40/200     LI/O  d6+3s/d8+3s/d12+3s F
  |-
 HEAVY WEAPONS|-
 ◦  Machine Gun                 |Heavy MG             0  -  100/400/1000  HI/G  d6+1w/2d4+2w/d8m   A
 ◦  MG, Charge                  |Heavy Charge MG     -1  -  200/600/1200  HI/G  d8w/2d6w/2d4m      A
+◦  13mm Charge MG              |13mm Charge MG      -1  -  200/600/1200  HI/G  d8w/2d6w/d8m       A
 ◦  Rail Gun                    |Rail Gun            -1  -  150/500/1500  HI/G  d6w/d6+2w/d6m      BA
 ◦  Arc Gun                     |Arc Gun             -1  -  20/40/100     En/G  d8+1s/d8w/d6+3w    F
 ◦  Stutter Cannon              |Stutter Cannon      -1  -  20/40/80      LI/O  d6+2s/d8+3s/2d6+3s F
 ◦  25mm Sabot Cannon           |25mm Sabot Cannon    0  -  100/200/2000  HI/G  d8w/d4+1m/d6+2m    F
 ◦  Plasma Gun                  |Plasma Gun           0  -  40/80/200     En/G  d8w/d8+3w/d12+3w   F
 ◦  Quantum Mini                |Quantum Minigun      0  -  100/250/800   En/G  d8+1w/d8+3w/d6m    FBA
+◦  Mass Cannon                 |Mass Cannon          0  -  6/20/60       En/G  d8+1w/d12+1w/d8+1m F
  |-
 MELEE WEAPONS|-
 ◦  Combat Knife                |Combat Knife         0  -                LI/O  d4+1w/d4+2w/d4+3w
