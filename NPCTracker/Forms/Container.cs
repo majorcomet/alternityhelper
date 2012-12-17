@@ -56,23 +56,10 @@ namespace Alternity {
     }
 
     private void helpToolStripMenuItem_Click(object sender, EventArgs e) {
-      string msg = @"In NPC Windows:
-  F5: Increase Stun Damage
-  F6: Increase Wound Damage
-  F7: Increase Mortal Damage
-    (Use with SHIFT to decrease damage)
-  Click/Right-Click resistance mods to adjust *
-  Click/Right-Click Actions label to adjust *
-  Right-Click 'Link' to set info shortcut for NPC
-
-In Numeric Text Boxes:
-  Up/Down: Adjust Numeric Value *
-
-* These don't work when editing is locked.
-
-";
-      MessageBox.Show(msg, "Keys", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
+      using (Alternity.Forms.HelpForm win = new Forms.HelpForm()) {
+        win.ShowDialog();
+      }
+   }
 
     private void newToolStripMenuItem_Click(object sender, EventArgs e) {
       MainForm newMain = new MainForm(new NPC());
