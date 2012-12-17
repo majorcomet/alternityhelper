@@ -23,16 +23,18 @@ PISTOLS|-
 SMGS|-
 ◦  Autoflec SMG                |Autoflec SMG         0  -  10/20/40      HI/O  d4w/d6w/d4m        FBA
 ◦  9mm Charge SMG              |9mm Charge SMG      +1  -  20/40/100     HI/O  d4+1w/d6+1w/d4m    BA
-◦   Laser SMG                  |Laser SMG            0  -  20/80/200     En/O  d6w/d6+2w/d4m      BA
+◦  Laser SMG                   |Laser SMG            0  -  20/80/200     En/O  d6w/d6+2w/d4m      BA
 ◦  Stutter SMG                 |Stutter SMG          0  -  10/20/80      LI/O  d6+2s/d8+2s/d8+4s  BA
  |-
 RIFLES|-
+◦  6mm Charge Autorifle        |6mm Chrge Autorifle -1  -  60/150/400    HI/O  d6w/2d4w/d4+1m     BA
 ◦  11mm Charge Rifle           |11mm Charge Rifle    0  -  80/160/400    HI/O  d6+1w/d6+3w/d6+1m  FBA
 ◦  11mm, 0-G Rifle             |11mm 0G Rifle        0  -  30/60/200     HI/O  d6+1w/d6+3w/d6+1m  F
 ◦  Laser Rifle                 |Laser Rifle         -1  -  100/400/1000  En/O  d6+1w/d6+3w/d4+1m  F
 ◦  Mass Rifle                  |Mass Rifle           0  -  4/12/30       En/G  d6w/d8+1w/d6+1m    F
 ◦  Quantum Rifle               |Quantum Rifle        0  -  80/200/500    En/O  d4+3w/d6+4w/d6+1m  FBA
 ◦  Render Rifle                |Render Rifle         0  -  50/100/250    En/O  d6+1s/d6+1w/d4+1m  F
+◦  15mm Sabot Rifle            |15mm Sabot Rifle     0  -  80/200/800    HI/O  d4+4w/2d4+2w/d6+3m F
  |-
 HEAVY WEAPONS|-
 ◦  Machine Gun                 |Heavy MG             0  -  100/400/1000  HI/G  d6+1w/2d4+2w/d8m   A
@@ -64,6 +66,7 @@ PSIONICS|-
  |-
 FLINTLOCK|-
 ◦  Flintlock Musket            |Musket              +2  -  20/40/100     HI/O  d6+1w/d6+3w/d6+1m  F
+◦  Flintlock Weren Musket      |Weren Musket        +2  -  25/50/125     HI/O  d8+1w/d8+3w/d8+1m  F
 ◦  Flintlock Pistol            |Flintlock Pistol    +2  -  4/8/16        HI/O  d4+2w/d6+2w/d4+1m  F
 ◦  Flintlock Weren Pistol      |Weren Pistol        +2  -  4/8/16        HI/O  d6+2w/d8+2w/d4+2m  F
  |-
