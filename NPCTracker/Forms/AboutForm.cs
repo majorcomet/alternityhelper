@@ -21,6 +21,7 @@ namespace Alternity.Forms {
   public partial class AboutForm : Form {
     public AboutForm() {
       InitializeComponent();
+      AboutBox.Text = string.Format("Alternity Helper, by Andrew Barber. Version {0}", Application.ProductVersion.ToString());
     }
 
     private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {

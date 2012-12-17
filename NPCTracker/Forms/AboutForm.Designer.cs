@@ -35,7 +35,7 @@ namespace Alternity.Forms {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.AboutBox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // linkLabel1
@@ -62,27 +62,27 @@ namespace Alternity.Forms {
       this.linkLabel2.Text = "Licensed: CC BY-NC 3.0";
       this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
       // 
-      // textBox1
+      // AboutBox
       // 
-      this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+      this.AboutBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-      this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-      this.textBox1.Location = new System.Drawing.Point(12, 12);
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(260, 24);
-      this.textBox1.TabIndex = 2;
-      this.textBox1.Text = "Alternity Helper, by Andrew Barber.";
+      this.AboutBox.BackColor = System.Drawing.SystemColors.Control;
+      this.AboutBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.AboutBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+      this.AboutBox.Location = new System.Drawing.Point(12, 12);
+      this.AboutBox.Multiline = true;
+      this.AboutBox.Name = "AboutBox";
+      this.AboutBox.Size = new System.Drawing.Size(260, 24);
+      this.AboutBox.TabIndex = 2;
+      this.AboutBox.Text = "Alternity Helper, by Andrew Barber.";
       // 
       // AboutForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(284, 61);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.AboutBox);
       this.Controls.Add(this.linkLabel2);
       this.Controls.Add(this.linkLabel1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -104,6 +104,6 @@ namespace Alternity.Forms {
 
     private System.Windows.Forms.LinkLabel linkLabel1;
     private System.Windows.Forms.LinkLabel linkLabel2;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox AboutBox;
   }
 }
