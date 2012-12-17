@@ -3980,6 +3980,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>_2A658AA352B8473D83FC3D435EF851A2.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_4A952CFE620F4380A3CDE4BB7F64871D.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_9862874DCDC14F6596129A2C2E6A29B1.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_EA02BD09ECAA432392BD35C5DCE57F41.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
@@ -4494,7 +4495,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]AlternityHelper.Primary output</td><td/></row>
 		<row><td>ProductCode</td><td>{5AE18339-938F-468A-84C3-977443819AD5}</td><td/></row>
 		<row><td>ProductName</td><td>Alternity Helper</td><td/></row>
-		<row><td>ProductVersion</td><td>1.01.0000</td><td/></row>
+		<row><td>ProductVersion</td><td>1.00.0005</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
