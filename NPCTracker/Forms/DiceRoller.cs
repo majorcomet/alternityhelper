@@ -74,7 +74,14 @@ namespace Alternity {
     }
 
     private void DiceRoller_KeyUp(object sender, KeyEventArgs e) {
-      if (e.KeyCode == Keys.Enter && !RollButton.Focused) {
+      if (e.KeyCode == Keys.D && e.Modifiers == Keys.Control) {
+        Form owner = this.Owner;
+        this.Location = new Point(
+          owner.Location.X + (owner.Size.Width / 2) - (this.Size.Width / 2),
+          owner.Location.Y + (owner.Size.Height / 2) - (this.Size.Height / 2)
+          );
+        e.Handled = true;
+      }else if (e.KeyCode == Keys.Enter && !RollButton.Focused) {
         RollButton_Click(RollButton, e);
         e.Handled = true;
       } else if (e.KeyCode == Keys.A && e.Modifiers == Keys.Control) {

@@ -115,11 +115,6 @@ namespace Alternity {
         roller.FormClosing += roller_FormClosing;
         roller.Owner = this;
         roller.Show();
-      } else {
-        roller.Location = new Point(
-          this.Location.X + (this.Size.Width / 2) - (roller.Size.Width / 2),
-          this.Location.Y + (this.Size.Height / 2) - (roller.Size.Height / 2)
-          );
       }
       roller.Focus();
     }
