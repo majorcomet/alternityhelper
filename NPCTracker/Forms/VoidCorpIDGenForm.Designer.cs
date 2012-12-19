@@ -56,6 +56,8 @@ namespace Alternity.Forms {
       this.RankBox.Name = "RankBox";
       this.RankBox.Size = new System.Drawing.Size(31, 20);
       this.RankBox.TabIndex = 1;
+      this.RankBox.Enter += new System.EventHandler(this.RankBox_Enter);
+      this.RankBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RankBox_KeyDown);
       // 
       // label2
       // 
@@ -74,6 +76,7 @@ namespace Alternity.Forms {
       this.ResultBox.ReadOnly = true;
       this.ResultBox.Size = new System.Drawing.Size(100, 20);
       this.ResultBox.TabIndex = 4;
+      this.ResultBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RankBox_KeyDown);
       // 
       // GenerateButton
       // 

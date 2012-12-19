@@ -26,12 +26,12 @@ namespace Alternity.Forms {
     }
     private Regex AlphaOnly = new Regex("^[a-zA-Z]{0,2}$");
     private void GenerateButton_Click(object sender, EventArgs e) {
-      string rank = RankBox.Text.Trim();
+      string rank = RankBox.Text;
       if (!AlphaOnly.IsMatch(rank)) {
         MessageBox.Show("Rank must be 0-2 letters, only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
-      rank = rank.ToUpper();
+      rank = rank.ToUpper().Trim();
       if (rank.Length == 0) {
         rank += RandomCharacter() + RandomCharacter();
       } else if (rank.Length == 1) {
@@ -52,6 +52,27 @@ namespace Alternity.Forms {
       } else if (e.KeyCode == Keys.Escape) {
         this.Close();
         e.Handled = true;
+      }
+    }
+
+    private void RankBox_Enter(object sender, EventArgs e) {
+      TextBox box = sender as TextBox;
+      if (box != null) {
+        box.SelectAll();
+      }
+    }
+
+    private void RankBox_KeyDown(object sender, KeyEventArgs e) {
+      TextBox box = sender as TextBox;
+      if (box != null) {
+        if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down) {
+          if (box.Name == RankBox.Name) {
+            ResultBox.Focus();
+          } else {
+            RankBox.Focus();
+          }
+          e.Handled = true;
+        }
       }
     }
   }
