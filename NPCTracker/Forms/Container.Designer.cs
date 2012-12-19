@@ -39,6 +39,7 @@ namespace Alternity {
       this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,7 @@ namespace Alternity {
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.phaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.voidCorpIDGenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -116,6 +117,13 @@ namespace Alternity {
       this.helpToolStripMenuItem.Text = "&Help";
       this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
       // 
+      // aboutToolStripMenuItem
+      // 
+      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+      this.aboutToolStripMenuItem.Text = "&About";
+      this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+      // 
       // toolStripMenuItem1
       // 
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -132,6 +140,7 @@ namespace Alternity {
       // 
       this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.diceRollerToolStripMenuItem1,
+            this.voidCorpIDGenToolStripMenuItem,
             this.setAllActionPhasesToolStripMenuItem1,
             this.toolStripMenuItem6,
             this.editToolStripMenuItem,
@@ -236,12 +245,14 @@ namespace Alternity {
       this.openFileDialog1.SupportMultiDottedExtensions = true;
       this.openFileDialog1.Title = "Choose Character Template to Load";
       // 
-      // aboutToolStripMenuItem
+      // voidCorpIDGenToolStripMenuItem
       // 
-      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-      this.aboutToolStripMenuItem.Text = "&About";
-      this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+      this.voidCorpIDGenToolStripMenuItem.Name = "voidCorpIDGenToolStripMenuItem";
+      this.voidCorpIDGenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+      this.voidCorpIDGenToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+      this.voidCorpIDGenToolStripMenuItem.Tag = "Keep";
+      this.voidCorpIDGenToolStripMenuItem.Text = "VoidCorp ID Gen";
+      this.voidCorpIDGenToolStripMenuItem.Click += new System.EventHandler(this.voidCorpIDGenToolStripMenuItem_Click);
       // 
       // Container
       // 
@@ -287,5 +298,6 @@ namespace Alternity {
     private System.Windows.Forms.ToolStripMenuItem setAllActionPhasesToolStripMenuItem1;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem voidCorpIDGenToolStripMenuItem;
   }
 }

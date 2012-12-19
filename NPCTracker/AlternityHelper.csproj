@@ -103,6 +103,12 @@
     <Compile Include="Forms\NPCWindow.Designer.cs">
       <DependentUpon>NPCWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VoidCorpIDGenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VoidCorpIDGenForm.Designer.cs">
+      <DependentUpon>VoidCorpIDGenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\SaveLocation.cs" />
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NPCWindow.resx">
       <DependentUpon>NPCWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VoidCorpIDGenForm.resx">
+      <DependentUpon>VoidCorpIDGenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -232,5 +232,11 @@ namespace Alternity {
         win.ShowDialog();
       }
     }
+
+    private void voidCorpIDGenToolStripMenuItem_Click(object sender, EventArgs e) {
+      using (Alternity.Forms.VoidCorpIDGenForm win = new Forms.VoidCorpIDGenForm()) {
+        win.ShowDialog();
+      }
+    }
   }
 }
