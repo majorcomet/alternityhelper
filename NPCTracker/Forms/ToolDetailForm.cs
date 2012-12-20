@@ -74,6 +74,8 @@ namespace Alternity {
         return;
       } else if (PathBox.Text.ToLower().StartsWith("http")) {
         // do nothing; just avoid checking the path.
+      } else if (PathBox.Text.ToLower().StartsWith("evernote:")) {
+        // do nothing; just avoid checking the path.
       } else if (!File.Exists(PathBox.Text) && !Directory.Exists(PathBox.Text)) {
         MessageBox.Show("Path does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
