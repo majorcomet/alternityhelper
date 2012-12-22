@@ -130,8 +130,9 @@ namespace Alternity {
 
     private void editToolStripMenuItem_Click(object sender, EventArgs e) {
       using (ToolsWindow win = new ToolsWindow()) {
-        win.ShowDialog();
-        ReloadTools();
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          ReloadTools();
+        }
       }
     }
 

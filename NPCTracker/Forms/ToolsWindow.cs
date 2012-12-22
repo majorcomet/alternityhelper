@@ -38,14 +38,6 @@ namespace Alternity {
     }
 
     void ToolsWindow_FormClosing(object sender, FormClosingEventArgs e) {
-      rep.Wipe();
-      foreach (var item in ToolList.Items) {
-        Tool tool = item as Tool;
-        if (tool != null) {
-          rep.Add(tool);
-        }
-      }
-      rep.Save();
     }
 
     private void button1_Click(object sender, EventArgs e) {
@@ -60,7 +52,10 @@ namespace Alternity {
 
     private void ToolsWindow_KeyUp(object sender, KeyEventArgs e) {
       if (e.KeyCode == Keys.Escape) {
-        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        e.Handled = true;
+      } else if (e.KeyCode == Keys.Enter) {
+        OKButton_Click(OKButton, null);
         e.Handled = true;
       }
     }
@@ -111,6 +106,18 @@ namespace Alternity {
       idx--;
       ToolList.Items.Insert(idx, item);
       ToolList.SelectedIndex = idx;
+    }
+
+    private void OKButton_Click(object sender, EventArgs e) {
+      rep.Wipe();
+      foreach (var item in ToolList.Items) {
+        Tool tool = item as Tool;
+        if (tool != null) {
+          rep.Add(tool);
+        }
+      }
+      rep.Save();
+      this.DialogResult = System.Windows.Forms.DialogResult.OK;
     }
 
 
