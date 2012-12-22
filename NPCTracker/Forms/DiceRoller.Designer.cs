@@ -314,6 +314,8 @@ namespace Alternity {
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.Location = global::Alternity.Properties.Settings.Default.RollerLocation;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "DiceRoller";
       this.Text = "Dice Roller";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DiceRoller_KeyUp);
