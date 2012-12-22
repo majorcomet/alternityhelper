@@ -44,6 +44,7 @@ namespace Alternity {
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.diceRollerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.voidCorpIDGenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.setAllActionPhasesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
       this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@ namespace Alternity {
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.phaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-      this.voidCorpIDGenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -158,6 +158,14 @@ namespace Alternity {
       this.diceRollerToolStripMenuItem1.Text = "&Dice Roller";
       this.diceRollerToolStripMenuItem1.Click += new System.EventHandler(this.diceRollerToolStripMenuItem_Click);
       // 
+      // voidCorpIDGenToolStripMenuItem
+      // 
+      this.voidCorpIDGenToolStripMenuItem.Name = "voidCorpIDGenToolStripMenuItem";
+      this.voidCorpIDGenToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+      this.voidCorpIDGenToolStripMenuItem.Tag = "Keep";
+      this.voidCorpIDGenToolStripMenuItem.Text = "VoidCorp ID Gen";
+      this.voidCorpIDGenToolStripMenuItem.Click += new System.EventHandler(this.voidCorpIDGenToolStripMenuItem_Click);
+      // 
       // setAllActionPhasesToolStripMenuItem1
       // 
       this.setAllActionPhasesToolStripMenuItem1.Name = "setAllActionPhasesToolStripMenuItem1";
@@ -244,15 +252,6 @@ namespace Alternity {
       this.openFileDialog1.RestoreDirectory = true;
       this.openFileDialog1.SupportMultiDottedExtensions = true;
       this.openFileDialog1.Title = "Choose Character Template to Load";
-      // 
-      // voidCorpIDGenToolStripMenuItem
-      // 
-      this.voidCorpIDGenToolStripMenuItem.Name = "voidCorpIDGenToolStripMenuItem";
-      this.voidCorpIDGenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-      this.voidCorpIDGenToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-      this.voidCorpIDGenToolStripMenuItem.Tag = "Keep";
-      this.voidCorpIDGenToolStripMenuItem.Text = "VoidCorp ID Gen";
-      this.voidCorpIDGenToolStripMenuItem.Click += new System.EventHandler(this.voidCorpIDGenToolStripMenuItem_Click);
       // 
       // Container
       // 
