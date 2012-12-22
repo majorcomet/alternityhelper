@@ -32,9 +32,5 @@
 			<Name>AlternityHelper</Name>
 			<Project>{C2D9C1A4-87D4-4CF4-AC33-A9F73BF6F57F}</Project>
 		</ProjectReference>
-		<ProjectReference Include="..\NPCHelper\NPCTracker Library.csproj">
-			<Name>NPCTracker Library</Name>
-			<Project>{597FC1CC-7960-4250-90F2-5AE181444FAB}</Project>
-		</ProjectReference>
 	</ItemGroup>
 </Project>

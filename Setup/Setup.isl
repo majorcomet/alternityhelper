@@ -1886,7 +1886,6 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>alternityhelper.content_file</td><td>AlternityHelper.Content_Files</td><td>AlternityHelper.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;AlternityHelper&gt;|ContentFiles</td><td>3</td><td/></row>
 		<row><td>alternityhelper.primary_outp</td><td>AlternityHelper.Primary_output</td><td>AlternityHelper.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;AlternityHelper&gt;|Built</td><td>3</td><td/></row>
-		<row><td>npctracker_library.primary_o</td><td>NPCTracker_Library.Primary_output</td><td>NPCTracker Library.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;NPCTracker Library&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -3982,8 +3981,10 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>_2A658AA352B8473D83FC3D435EF851A2.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_4A952CFE620F4380A3CDE4BB7F64871D.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
+		<row><td>_7697674125554CA4B126425726B8CD8D.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_8932AB9CAA1849A49CCCB6761633B774.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_9862874DCDC14F6596129A2C2E6A29B1.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
+		<row><td>_BCFC71FAA06D4169914E34ED6744B6AF.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_EA02BD09ECAA432392BD35C5DCE57F41.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 	</table>
 
@@ -4496,7 +4497,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]AlternityHelper.Primary output</td><td/></row>
 		<row><td>ProductCode</td><td>{5AE18339-938F-468A-84C3-977443819AD5}</td><td/></row>
 		<row><td>ProductName</td><td>Alternity Helper</td><td/></row>
-		<row><td>ProductVersion</td><td>1.01.01</td><td/></row>
+		<row><td>ProductVersion</td><td>1.02.00</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
