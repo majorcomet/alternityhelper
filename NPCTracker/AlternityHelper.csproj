@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Armor.cs" />
+    <Compile Include="Classes\Movement.cs" />
     <Compile Include="Classes\NPC.cs" />
     <Compile Include="Classes\Phase.cs" />
     <Compile Include="Classes\Tool.cs" />
@@ -203,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Alternity.ico" />
+    <Content Include="Images\Go.png" />
     <Content Include="Images\Locked.png" />
     <Content Include="Images\Unlocked.png" />
     <Content Include="Images\Up.png" />
