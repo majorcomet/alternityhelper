@@ -14,8 +14,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization.Formatters.Soap;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -54,23 +52,10 @@ namespace Alternity {
         }
         FixDeserializedNPC(npc);
         SetNPC(npc);
-      } catch {
-        try {
-          var formatter = new SoapFormatter();
-          NPC npc = null;
-          using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None)) {
-            npc = (NPC)formatter.Deserialize(fs);
-          }
-          SetNPC(npc);
-          XmlSerializer xmlser = new XmlSerializer(typeof(NPC));
-          using (Stream st = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None)) {
-            xmlser.Serialize(st, npc);
-          }
-        } catch (Exception ex) {
-          MessageBox.Show(ex.Message, "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          SetNPC(new NPC());
-          LoadedFileName = "";
-        }
+      } catch (Exception ex) {
+        MessageBox.Show(ex.Message, "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        SetNPC(new NPC());
+        LoadedFileName = "";
       }
     }
 
