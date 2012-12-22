@@ -29,6 +29,7 @@ namespace Alternity {
     private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
     private Regex NumbersAndSigns = new Regex("^[-+0-9]*$");
     private Regex NumbersOnly = new Regex("^[0-9]*$");
+    private Movement Movement = new Movement();
     public MainForm() {
       InitializeComponent();
       this.Load += MainForm_Load;
@@ -137,8 +138,15 @@ namespace Alternity {
         npc.ToolTitle = this.Tool.Title;
         npc.ToolPath = this.Tool.Path;
         npc.ToolArgs = this.Tool.Args;
+        npc.Sprint = this.Movement.Sprint;
+        npc.Run = this.Movement.Run;
+        npc.Walk = this.Movement.Walk;
+        npc.EasySwim = this.Movement.EasySwim;
+        npc.Swim = this.Movement.Swim;
+        npc.Glide = this.Movement.Glide;
+        npc.Fly = this.Movement.Fly;
       } catch (Exception ex) {
-        MessageBox.Show(ex.Message, "Error");
+        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
       return npc;
     }
@@ -445,6 +453,9 @@ namespace Alternity {
       } else if (e.KeyCode == Keys.F7) {
         IncreaseCheckByOne(MortalPanel);
         e.Handled = true;
+      } else if (e.KeyCode == Keys.M && e.Modifiers == Keys.Control) {
+        MovementButton_Click(MovementButton, null);
+        e.Handled = true;
       }
     }
 
@@ -634,8 +645,57 @@ namespace Alternity {
       this.Tool.Title = npc.ToolTitle;
       this.Tool.Path = npc.ToolPath;
       this.Tool.Args = npc.ToolArgs;
+      this.Movement.EasySwim = npc.EasySwim;
+      this.Movement.Fly = npc.Fly;
+      this.Movement.Glide = npc.Glide;
+      this.Movement.Run = npc.Run;
+      this.Movement.Sprint = npc.Sprint;
+      this.Movement.Swim = npc.Swim;
+      this.Movement.Walk = npc.Walk;
+      SetMovementTooltip();
       SetToolLinkToolTip();
+
     }
+
+    private void SetMovementTooltip() {
+      string toolTip = "";
+      if (Movement.Glide + Movement.Fly == 0) {
+        toolTip = string.Format(@"Sprint: {0}
+Run: {1}
+Walk: {2}
+Easy Swim: {3}
+Swim: {4}
+
+",
+          this.Movement.Sprint,
+          this.Movement.Run,
+          this.Movement.Walk,
+          this.Movement.EasySwim,
+          this.Movement.Swim
+          );
+      } else {
+        toolTip = string.Format(@"Sprint: {0}
+Run: {1}
+Walk: {2}
+Easy Swim: {3}
+Swim: {4}
+Glide: {5}
+Fly: {6}
+
+",
+          this.Movement.Sprint,
+          this.Movement.Run,
+          this.Movement.Walk,
+          this.Movement.EasySwim,
+          this.Movement.Swim,
+          this.Movement.Glide,
+          this.Movement.Fly
+          );
+      }
+      toolTip += "Control-M to view/edit";
+      toolTip1.SetToolTip(MovementButton, toolTip);
+    }
+
     private void SetResistModLabelToolTip(Label label) {
       int val = (int)label.Tag;
       string text = "Resist Mod Adjustment: " + val.ToString() + "\r\nClick to increase; right-click to decrease";
@@ -802,6 +862,19 @@ namespace Alternity {
         SetWindowName();
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
+      }
+    }
+
+    private void MovementButton_Click(object sender, EventArgs e) {
+      int str = 0;
+      int dex = 0;
+      int.TryParse(STRBox.Text, out str);
+      int.TryParse(DEXBox.Text, out dex);
+      using (Alternity.Forms.MovementForm win = new Forms.MovementForm(this.Movement, str, dex)) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          this.Movement = win.MovementValue;
+          SetMovementTooltip();
+        }
       }
     }
   }

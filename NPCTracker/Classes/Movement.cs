@@ -12,5 +12,19 @@ namespace Alternity {
     public int Swim { get; set; }
     public int Glide { get; set; }
     public int Fly { get; set; }
+
+    public void SetGeneratedValues(int sprint, int run, int walk) {
+      Sprint = Glide = sprint;
+      Run = run;
+      Walk = Swim = walk;
+      Fly = Glide * 2;
+      EasySwim = Swim / 2;
+    }
+
+    public bool AllZero {
+      get {
+        return (Sprint + Run + Walk + EasySwim + Swim + Glide + Fly) == 0;
+      }
+    }
   }
 }
