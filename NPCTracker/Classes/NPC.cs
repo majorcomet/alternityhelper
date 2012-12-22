@@ -46,6 +46,13 @@ namespace Alternity {
     public string ToolTitle { get; set; }
     public string ToolPath { get; set; }
     public string ToolArgs { get; set; }
+    public int Sprint { get; set; }
+    public int Run { get; set; }
+    public int Walk { get; set; }
+    public int EasySwim { get; set; }
+    public int Swim { get; set; }
+    public int Glide { get; set; }
+    public int Fly { get; set; }
 
     public NPC() {
       Name = "";

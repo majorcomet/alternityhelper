@@ -7,5 +7,3 @@
  */
 
 /PythagoreanDistance is a quick program for calculating 2D distances, which I find frequent use for during Alternity games.
-
-The library project exists for backwards compatability for serialization.
