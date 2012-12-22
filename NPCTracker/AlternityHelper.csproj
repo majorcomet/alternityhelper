@@ -101,6 +101,12 @@
     <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MovementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovementForm.Designer.cs">
+      <DependentUpon>MovementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NPCWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovementForm.resx">
+      <DependentUpon>MovementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NPCWindow.resx">
       <DependentUpon>NPCWindow.cs</DependentUpon>
