@@ -4497,7 +4497,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]AlternityHelper.Primary output</td><td/></row>
 		<row><td>ProductCode</td><td>{5AE18339-938F-468A-84C3-977443819AD5}</td><td/></row>
 		<row><td>ProductName</td><td>Alternity Helper</td><td/></row>
-		<row><td>ProductVersion</td><td>1.02.00</td><td/></row>
+		<row><td>ProductVersion</td><td>1.03.00</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
