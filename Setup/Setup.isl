@@ -3985,6 +3985,7 @@
 		<row><td>_8932AB9CAA1849A49CCCB6761633B774.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_9862874DCDC14F6596129A2C2E6A29B1.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_BCFC71FAA06D4169914E34ED6744B6AF.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
+		<row><td>_C2B8F90D3CDB49C3A83836DEA806D824.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 		<row><td>_EA02BD09ECAA432392BD35C5DCE57F41.exe</td><td/><td>C:\Users\uRilla\Documents\VS2010 Projects\Alternity\NPCTracker\obj\Release\AlternityHelper.exe</td><td>0</td></row>
 	</table>
 
@@ -4497,7 +4498,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]AlternityHelper.Primary output</td><td/></row>
 		<row><td>ProductCode</td><td>{5AE18339-938F-468A-84C3-977443819AD5}</td><td/></row>
 		<row><td>ProductName</td><td>Alternity Helper</td><td/></row>
-		<row><td>ProductVersion</td><td>1.03.00</td><td/></row>
+		<row><td>ProductVersion</td><td>1.04.00</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
