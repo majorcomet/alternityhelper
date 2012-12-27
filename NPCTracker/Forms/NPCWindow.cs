@@ -945,6 +945,15 @@ Fly: {6}
     }
 
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+      if (Dirty) {
+        var res = MessageBox.Show("Save " + NPCNameBox.Text + " before exiting?", "Closing",
+           MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+        if (res == System.Windows.Forms.DialogResult.Yes) {
+          SaveButton_Click(SaveButton, null);
+        } else if (res == System.Windows.Forms.DialogResult.Cancel) {
+          e.Cancel = true;
+        }
+      }
     }
   }
 }
