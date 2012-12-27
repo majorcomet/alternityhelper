@@ -63,10 +63,6 @@ UNARMED|-
 ◦  Power                       |Unarmed, Power       0  -                LI/O  d6s/d6+2/d4w
 ◦  Weren                       |Unarmed, Weren       0  -                LI/O  d4w/d4+2w/d4m
  |-
-PSIONICS|-
-◦  Mind Blast                  |Mind Blast           0  -  10/20/40
-◦  Pyrotechnics                |Pyrotechnics         0  -  10/20/30
- |-
 FLINTLOCK|-
 ◦  Flintlock Musket            |Musket              +2  -  20/40/100     HI/O  d6+1w/d6+3w/d6+1m  F
 ◦  Flintlock Weren Musket      |Weren Musket        +2  -  25/50/125     HI/O  d8+1w/d8+3w/d8+1m  F
@@ -87,6 +83,14 @@ BANTAMS|-
 ◦   Antiair                    |Antiair Bantam      -2  -  4/8/12        HI/G  d4w/d4+2w/d4m      F
 ◦   Antipersonel               |Antipersonel Bantam  0  -  4/8/12        EN/O  d62/d6+2w/d8+2w    F
 ◦   Antivehicle                |Antivehicle Bantam  -2  -  0/2/4         HI/G  d4+2w/d4+4w/d4+1m  F
+ |-
+PSIONICS|-
+◦  Mind Blast Rank 1           |Mind Blast           0  -  10/20/40      N/A   d4+1s/d4+2s/d6+2s
+◦  Mind Blast Rank 5           |Mind Blast           0  -  10/20/40      N/A   d4+2s/d6+2s/d8+2s
+◦  Mind Blast Rank 9           |Mind Blast           0  -  10/20/40      N/A   2d4+2s/2d6+2s/2d8+2s
+◦  Pyrotechnics Rank 1         |Pyrotechnics (1)     0  -  10/20/30      En/O  d4+2w/d6+2w/d8+2w
+◦  Pyrotechnics Rank 5         |Pyrotechnics (5)     0  -  10/20/30      En/O  d6+2w/d8+2w/d4m
+◦  Pyrotechnics Rank 9         |Pyrotechnics (9)     0  -  10/20/30      En/O  d8+2w/d4m/d4+2m
  |-
 KROATH WEAPONS|-
 ◦  Dark Plasma Rifle           |Dark Plasma Rifle    0  -  80/200/400    En/G  d8+1w/2d6w/2d6+3w  F
