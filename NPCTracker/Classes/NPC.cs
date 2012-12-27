@@ -53,6 +53,7 @@ namespace Alternity {
     public int Swim { get; set; }
     public int Glide { get; set; }
     public int Fly { get; set; }
+    public int LastResorts { get; set; }
 
     public NPC() {
       Name = "";

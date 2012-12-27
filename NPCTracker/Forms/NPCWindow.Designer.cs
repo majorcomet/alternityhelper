@@ -143,11 +143,13 @@ namespace Alternity {
       this.LockedButton = new System.Windows.Forms.Button();
       this.KOCheckBox = new System.Windows.Forms.CheckBox();
       this.label9 = new System.Windows.Forms.Label();
+      this.label10 = new System.Windows.Forms.Label();
       this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
       this.OtherBox = new System.Windows.Forms.TextBox();
       this.ActionCheckAdjustmentBox = new System.Windows.Forms.TextBox();
       this.ToolLink = new System.Windows.Forms.LinkLabel();
       this.MovementButton = new System.Windows.Forms.Button();
+      this.LastResortBox = new System.Windows.Forms.TextBox();
       this.MortalPanel.SuspendLayout();
       this.FatiguePanel.SuspendLayout();
       this.WoundPanel.SuspendLayout();
@@ -162,7 +164,8 @@ namespace Alternity {
       this.SkillsBox.Name = "SkillsBox";
       this.SkillsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.SkillsBox.Size = new System.Drawing.Size(595, 64);
-      this.SkillsBox.TabIndex = 44;
+      this.SkillsBox.TabIndex = 46;
+      this.SkillsBox.TextChanged += new System.EventHandler(this.SkillsBox_TextChanged);
       this.SkillsBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
       // 
       // MortalPanel
@@ -180,7 +183,7 @@ namespace Alternity {
       this.MortalPanel.Location = new System.Drawing.Point(444, 81);
       this.MortalPanel.Name = "MortalPanel";
       this.MortalPanel.Size = new System.Drawing.Size(155, 20);
-      this.MortalPanel.TabIndex = 41;
+      this.MortalPanel.TabIndex = 43;
       // 
       // Mortal10
       // 
@@ -298,7 +301,7 @@ namespace Alternity {
       this.MortalBox.MaxLength = 2;
       this.MortalBox.Name = "MortalBox";
       this.MortalBox.Size = new System.Drawing.Size(20, 20);
-      this.MortalBox.TabIndex = 40;
+      this.MortalBox.TabIndex = 42;
       this.MortalBox.Text = "10";
       this.MortalBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Box_);
       this.MortalBox.TextChanged += new System.EventHandler(this.MortalBox_TextChanged);
@@ -320,7 +323,7 @@ namespace Alternity {
       this.FatiguePanel.Location = new System.Drawing.Point(444, 55);
       this.FatiguePanel.Name = "FatiguePanel";
       this.FatiguePanel.Size = new System.Drawing.Size(155, 20);
-      this.FatiguePanel.TabIndex = 36;
+      this.FatiguePanel.TabIndex = 38;
       // 
       // Fatigue10
       // 
@@ -447,7 +450,7 @@ namespace Alternity {
       this.FatigueBox.MaxLength = 2;
       this.FatigueBox.Name = "FatigueBox";
       this.FatigueBox.Size = new System.Drawing.Size(20, 20);
-      this.FatigueBox.TabIndex = 35;
+      this.FatigueBox.TabIndex = 37;
       this.FatigueBox.Text = "10";
       this.FatigueBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Box_);
       this.FatigueBox.TextChanged += new System.EventHandler(this.FatigueBox_TextChanged);
@@ -488,7 +491,7 @@ namespace Alternity {
       this.WoundPanel.Location = new System.Drawing.Point(69, 81);
       this.WoundPanel.Name = "WoundPanel";
       this.WoundPanel.Size = new System.Drawing.Size(306, 20);
-      this.WoundPanel.TabIndex = 39;
+      this.WoundPanel.TabIndex = 41;
       // 
       // Wound20
       // 
@@ -716,7 +719,7 @@ namespace Alternity {
       this.WoundBox.MaxLength = 2;
       this.WoundBox.Name = "WoundBox";
       this.WoundBox.Size = new System.Drawing.Size(20, 20);
-      this.WoundBox.TabIndex = 38;
+      this.WoundBox.TabIndex = 40;
       this.WoundBox.Text = "20";
       this.WoundBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Box_);
       this.WoundBox.TextChanged += new System.EventHandler(this.WoundBox_TextChanged);
@@ -748,7 +751,7 @@ namespace Alternity {
       this.StunPanel.Location = new System.Drawing.Point(69, 55);
       this.StunPanel.Name = "StunPanel";
       this.StunPanel.Size = new System.Drawing.Size(306, 20);
-      this.StunPanel.TabIndex = 34;
+      this.StunPanel.TabIndex = 36;
       // 
       // StunBox20
       // 
@@ -976,7 +979,7 @@ namespace Alternity {
       this.label15.Location = new System.Drawing.Point(4, 84);
       this.label15.Name = "label15";
       this.label15.Size = new System.Drawing.Size(42, 13);
-      this.label15.TabIndex = 37;
+      this.label15.TabIndex = 39;
       this.label15.Text = "Wound";
       // 
       // StunBox
@@ -985,7 +988,7 @@ namespace Alternity {
       this.StunBox.MaxLength = 2;
       this.StunBox.Name = "StunBox";
       this.StunBox.Size = new System.Drawing.Size(20, 20);
-      this.StunBox.TabIndex = 33;
+      this.StunBox.TabIndex = 35;
       this.StunBox.Text = "20";
       this.StunBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Box_);
       this.StunBox.TextChanged += new System.EventHandler(this.StunBox_TextChanged);
@@ -998,7 +1001,7 @@ namespace Alternity {
       this.label14.Location = new System.Drawing.Point(4, 58);
       this.label14.Name = "label14";
       this.label14.Size = new System.Drawing.Size(29, 13);
-      this.label14.TabIndex = 32;
+      this.label14.TabIndex = 34;
       this.label14.Text = "Stun";
       // 
       // ActionsBox
@@ -1086,7 +1089,7 @@ namespace Alternity {
       // 
       this.WILResistLabel.AutoSize = true;
       this.WILResistLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-      this.WILResistLabel.Location = new System.Drawing.Point(282, 31);
+      this.WILResistLabel.Location = new System.Drawing.Point(264, 31);
       this.WILResistLabel.Name = "WILResistLabel";
       this.WILResistLabel.Size = new System.Drawing.Size(19, 13);
       this.WILResistLabel.TabIndex = 27;
@@ -1098,7 +1101,7 @@ namespace Alternity {
       // 
       this.INTResistLabel.AutoSize = true;
       this.INTResistLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-      this.INTResistLabel.Location = new System.Drawing.Point(219, 31);
+      this.INTResistLabel.Location = new System.Drawing.Point(205, 31);
       this.INTResistLabel.Name = "INTResistLabel";
       this.INTResistLabel.Size = new System.Drawing.Size(19, 13);
       this.INTResistLabel.TabIndex = 24;
@@ -1110,7 +1113,7 @@ namespace Alternity {
       // 
       this.DEXResistLabel.AutoSize = true;
       this.DEXResistLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-      this.DEXResistLabel.Location = new System.Drawing.Point(110, 31);
+      this.DEXResistLabel.Location = new System.Drawing.Point(102, 31);
       this.DEXResistLabel.Name = "DEXResistLabel";
       this.DEXResistLabel.Size = new System.Drawing.Size(19, 13);
       this.DEXResistLabel.TabIndex = 19;
@@ -1122,7 +1125,7 @@ namespace Alternity {
       // 
       this.STRResistLabel.AutoSize = true;
       this.STRResistLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-      this.STRResistLabel.Location = new System.Drawing.Point(43, 31);
+      this.STRResistLabel.Location = new System.Drawing.Point(40, 31);
       this.STRResistLabel.Name = "STRResistLabel";
       this.STRResistLabel.Size = new System.Drawing.Size(19, 13);
       this.STRResistLabel.TabIndex = 16;
@@ -1132,7 +1135,7 @@ namespace Alternity {
       // 
       // PERBox
       // 
-      this.PERBox.Location = new System.Drawing.Point(327, 28);
+      this.PERBox.Location = new System.Drawing.Point(306, 28);
       this.PERBox.MaxLength = 2;
       this.PERBox.Name = "PERBox";
       this.PERBox.Size = new System.Drawing.Size(20, 20);
@@ -1146,7 +1149,7 @@ namespace Alternity {
       // label7
       // 
       this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(302, 31);
+      this.label7.Location = new System.Drawing.Point(282, 31);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(23, 13);
       this.label7.TabIndex = 28;
@@ -1154,7 +1157,7 @@ namespace Alternity {
       // 
       // WILBox
       // 
-      this.WILBox.Location = new System.Drawing.Point(263, 28);
+      this.WILBox.Location = new System.Drawing.Point(246, 28);
       this.WILBox.MaxLength = 2;
       this.WILBox.Name = "WILBox";
       this.WILBox.Size = new System.Drawing.Size(20, 20);
@@ -1168,7 +1171,7 @@ namespace Alternity {
       // label6
       // 
       this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(241, 31);
+      this.label6.Location = new System.Drawing.Point(224, 31);
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(22, 13);
       this.label6.TabIndex = 25;
@@ -1176,7 +1179,7 @@ namespace Alternity {
       // 
       // INTBox
       // 
-      this.INTBox.Location = new System.Drawing.Point(200, 28);
+      this.INTBox.Location = new System.Drawing.Point(187, 28);
       this.INTBox.MaxLength = 2;
       this.INTBox.Name = "INTBox";
       this.INTBox.Size = new System.Drawing.Size(20, 20);
@@ -1190,7 +1193,7 @@ namespace Alternity {
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(180, 31);
+      this.label5.Location = new System.Drawing.Point(167, 31);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(19, 13);
       this.label5.TabIndex = 22;
@@ -1198,7 +1201,7 @@ namespace Alternity {
       // 
       // CONBox
       // 
-      this.CONBox.Location = new System.Drawing.Point(156, 28);
+      this.CONBox.Location = new System.Drawing.Point(144, 28);
       this.CONBox.MaxLength = 2;
       this.CONBox.Name = "CONBox";
       this.CONBox.Size = new System.Drawing.Size(20, 20);
@@ -1212,7 +1215,7 @@ namespace Alternity {
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(130, 31);
+      this.label4.Location = new System.Drawing.Point(119, 31);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(26, 13);
       this.label4.TabIndex = 20;
@@ -1220,7 +1223,7 @@ namespace Alternity {
       // 
       // DEXBox
       // 
-      this.DEXBox.Location = new System.Drawing.Point(91, 28);
+      this.DEXBox.Location = new System.Drawing.Point(84, 28);
       this.DEXBox.MaxLength = 2;
       this.DEXBox.Name = "DEXBox";
       this.DEXBox.Size = new System.Drawing.Size(20, 20);
@@ -1234,7 +1237,7 @@ namespace Alternity {
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(64, 31);
+      this.label3.Location = new System.Drawing.Point(58, 31);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(26, 13);
       this.label3.TabIndex = 17;
@@ -1242,7 +1245,7 @@ namespace Alternity {
       // 
       // STRBox
       // 
-      this.STRBox.Location = new System.Drawing.Point(25, 28);
+      this.STRBox.Location = new System.Drawing.Point(23, 28);
       this.STRBox.MaxLength = 2;
       this.STRBox.Name = "STRBox";
       this.STRBox.Size = new System.Drawing.Size(20, 20);
@@ -1283,10 +1286,11 @@ namespace Alternity {
       // 
       // ArmorBox
       // 
-      this.ArmorBox.Location = new System.Drawing.Point(374, 28);
+      this.ArmorBox.Location = new System.Drawing.Point(353, 28);
       this.ArmorBox.Name = "ArmorBox";
-      this.ArmorBox.Size = new System.Drawing.Size(250, 20);
+      this.ArmorBox.Size = new System.Drawing.Size(246, 20);
       this.ArmorBox.TabIndex = 31;
+      this.ArmorBox.TextChanged += new System.EventHandler(this.ArmorBox_TextChanged);
       this.ArmorBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
       // 
       // OtherInfoButton
@@ -1312,7 +1316,7 @@ namespace Alternity {
       this.WeaponAddButton.Location = new System.Drawing.Point(602, 107);
       this.WeaponAddButton.Name = "WeaponAddButton";
       this.WeaponAddButton.Size = new System.Drawing.Size(22, 22);
-      this.WeaponAddButton.TabIndex = 45;
+      this.WeaponAddButton.TabIndex = 47;
       this.toolTip1.SetToolTip(this.WeaponAddButton, "Add Weapon (Control-W)");
       this.WeaponAddButton.UseVisualStyleBackColor = true;
       this.WeaponAddButton.Click += new System.EventHandler(this.WeaponAddButton_Click);
@@ -1323,7 +1327,7 @@ namespace Alternity {
       this.ArmorSetButton.FlatAppearance.BorderSize = 0;
       this.ArmorSetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.ArmorSetButton.Image = global::Alternity.Properties.Resources.Shield;
-      this.ArmorSetButton.Location = new System.Drawing.Point(350, 25);
+      this.ArmorSetButton.Location = new System.Drawing.Point(329, 25);
       this.ArmorSetButton.Name = "ArmorSetButton";
       this.ArmorSetButton.Size = new System.Drawing.Size(22, 22);
       this.ArmorSetButton.TabIndex = 30;
@@ -1340,7 +1344,7 @@ namespace Alternity {
       this.SaveButton.Location = new System.Drawing.Point(602, 149);
       this.SaveButton.Name = "SaveButton";
       this.SaveButton.Size = new System.Drawing.Size(22, 22);
-      this.SaveButton.TabIndex = 47;
+      this.SaveButton.TabIndex = 49;
       this.toolTip1.SetToolTip(this.SaveButton, "Save this NPC (Control-S)");
       this.SaveButton.UseVisualStyleBackColor = true;
       this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -1378,7 +1382,7 @@ namespace Alternity {
       this.LockedButton.Location = new System.Drawing.Point(602, 127);
       this.LockedButton.Name = "LockedButton";
       this.LockedButton.Size = new System.Drawing.Size(22, 22);
-      this.LockedButton.TabIndex = 46;
+      this.LockedButton.TabIndex = 48;
       this.toolTip1.SetToolTip(this.LockedButton, "Editing locked. Click to unlock (Control-L)");
       this.LockedButton.UseVisualStyleBackColor = true;
       this.LockedButton.Visible = false;
@@ -1391,7 +1395,7 @@ namespace Alternity {
       this.KOCheckBox.Location = new System.Drawing.Point(609, 84);
       this.KOCheckBox.Name = "KOCheckBox";
       this.KOCheckBox.Size = new System.Drawing.Size(15, 14);
-      this.KOCheckBox.TabIndex = 43;
+      this.KOCheckBox.TabIndex = 45;
       this.toolTip1.SetToolTip(this.KOCheckBox, "Is NPC Knocked Out?");
       this.KOCheckBox.UseVisualStyleBackColor = true;
       this.KOCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -1402,9 +1406,19 @@ namespace Alternity {
       this.label9.Location = new System.Drawing.Point(606, 69);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(22, 13);
-      this.label9.TabIndex = 42;
+      this.label9.TabIndex = 44;
       this.label9.Text = "KO";
       this.toolTip1.SetToolTip(this.label9, "Is NPC Knocked Out?");
+      // 
+      // label10
+      // 
+      this.label10.AutoSize = true;
+      this.label10.Location = new System.Drawing.Point(603, 31);
+      this.label10.Name = "label10";
+      this.label10.Size = new System.Drawing.Size(21, 13);
+      this.label10.TabIndex = 32;
+      this.label10.Text = "LR";
+      this.toolTip1.SetToolTip(this.label10, "Last Resort Points");
       // 
       // saveFileDialog1
       // 
@@ -1425,6 +1439,7 @@ namespace Alternity {
       this.OtherBox.Size = new System.Drawing.Size(618, 123);
       this.OtherBox.TabIndex = 48;
       this.OtherBox.Visible = false;
+      this.OtherBox.TextChanged += new System.EventHandler(this.OtherBox_TextChanged);
       this.OtherBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
       // 
       // ActionCheckAdjustmentBox
@@ -1449,6 +1464,7 @@ namespace Alternity {
       this.ToolLink.TabIndex = 13;
       this.ToolLink.TabStop = true;
       this.ToolLink.Text = "Link";
+      this.ToolLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ToolLink_LinkClicked);
       this.ToolLink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolLink_MouseDown);
       // 
       // MovementButton
@@ -1464,11 +1480,25 @@ namespace Alternity {
       this.MovementButton.UseVisualStyleBackColor = true;
       this.MovementButton.Click += new System.EventHandler(this.MovementButton_Click);
       // 
+      // LastResortBox
+      // 
+      this.LastResortBox.Location = new System.Drawing.Point(606, 45);
+      this.LastResortBox.MaxLength = 1;
+      this.LastResortBox.Name = "LastResortBox";
+      this.LastResortBox.Size = new System.Drawing.Size(16, 20);
+      this.LastResortBox.TabIndex = 33;
+      this.LastResortBox.Text = "0";
+      this.LastResortBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Box_);
+      this.LastResortBox.TextChanged += new System.EventHandler(this.LastResortBox_TextChanged);
+      this.LastResortBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NumberBox_KeyUp);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(630, 173);
+      this.Controls.Add(this.label10);
+      this.Controls.Add(this.LastResortBox);
       this.Controls.Add(this.MovementButton);
       this.Controls.Add(this.ToolLink);
       this.Controls.Add(this.label9);
@@ -1529,6 +1559,7 @@ namespace Alternity {
       this.ShowIcon = false;
       this.ShowInTaskbar = false;
       this.Text = "NPC Form";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
       this.MortalPanel.ResumeLayout(false);
       this.MortalPanel.PerformLayout();
@@ -1659,5 +1690,7 @@ namespace Alternity {
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.LinkLabel ToolLink;
     private System.Windows.Forms.Button MovementButton;
+    private System.Windows.Forms.Label label10;
+    private System.Windows.Forms.TextBox LastResortBox;
   }
 }

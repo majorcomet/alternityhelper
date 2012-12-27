@@ -26,10 +26,11 @@ namespace Alternity {
     private TextBox[] actionBoxes;
     private TextBox[] ControlsToReadOnly;
     private string LoadedFileName = "";
+    private Movement Movement = new Movement();
     private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
     private Regex NumbersAndSigns = new Regex("^[-+0-9]*$");
     private Regex NumbersOnly = new Regex("^[0-9]*$");
-    private Movement Movement = new Movement();
+    private bool Dirty = false;
     public MainForm() {
       InitializeComponent();
       this.Load += MainForm_Load;
@@ -145,6 +146,7 @@ namespace Alternity {
         npc.Swim = this.Movement.Swim;
         npc.Glide = this.Movement.Glide;
         npc.Fly = this.Movement.Fly;
+        npc.LastResorts = int.Parse(LastResortBox.Text);
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
@@ -157,6 +159,7 @@ namespace Alternity {
         MessageBox.Show("Numbers and +/- only, please");
         return;
       }
+      Dirty = true;
       if (box.Text.Length > 0 && !box.Text.StartsWith("-") && !box.Text.StartsWith("+")) {
         box.Text = "+" + box.Text;
       }
@@ -175,7 +178,10 @@ namespace Alternity {
         MessageBox.Show("Numbers only, please");
         return;
       }
-      if (box.Text.Length == 0) return;
+      Dirty = true;
+      if (box.Text.Length == 0) {
+        return;
+      }
       try {
         int val = int.Parse(box.Text);
         ActionCheckPlusBox.Text = (val + 1).ToString() + "+";
@@ -188,6 +194,7 @@ namespace Alternity {
 
     private void ActionsLabel_Click(object sender, MouseEventArgs e) {
       if (EditingLocked) return;
+      Dirty = true;
       int adj = (int)ActionsLabel.Tag;
       if (e.Button == System.Windows.Forms.MouseButtons.Left) {
         adj++;
@@ -235,6 +242,7 @@ namespace Alternity {
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       RecalcActions();
     }
 
@@ -273,6 +281,7 @@ namespace Alternity {
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(DEXBox.Text);
         DEXResistLabel.Text = GetResistMod(val, DEXResistLabel);
@@ -288,6 +297,7 @@ namespace Alternity {
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(box.Text);
         if (val > 0 && val < 21) {
@@ -394,6 +404,7 @@ namespace Alternity {
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(INTBox.Text);
         INTResistLabel.Text = GetResistMod(val, INTResistLabel);
@@ -402,8 +413,19 @@ namespace Alternity {
       }
     }
 
+    private void LastResortBox_TextChanged(object sender, EventArgs e) {
+      TextBox box = sender as TextBox;
+      if (!NumbersOnly.IsMatch(box.Text)) {
+        MessageBox.Show("Numbers only, please");
+        return;
+      }
+      if (box.Text.Length == 0) return;
+      Dirty = true;
+    }
+
     private void LockedButton_Click(object sender, EventArgs e) {
       LockedButton.Visible = !LockedButton.Visible;
+      Dirty = true;
     }
 
     private void LockedButton_VisibleChanged(object sender, EventArgs e) {
@@ -470,6 +492,7 @@ namespace Alternity {
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(box.Text);
         if (val > 0 && val < 21) {
@@ -481,7 +504,22 @@ namespace Alternity {
       }
     }
 
+    private void MovementButton_Click(object sender, EventArgs e) {
+      int str = 0;
+      int dex = 0;
+      int.TryParse(STRBox.Text, out str);
+      int.TryParse(DEXBox.Text, out dex);
+      using (Alternity.Forms.MovementForm win = new Forms.MovementForm(this.Movement, str, dex)) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          this.Movement = win.MovementValue;
+          Dirty = true;
+          SetMovementTooltip();
+        }
+      }
+    }
+
     private void NPCNameBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
       SetWindowName();
     }
 
@@ -508,6 +546,9 @@ namespace Alternity {
             if (box.Name == ActionCheckAdjustmentBox.Name) {
               if (value < -9) value = -9;
               if (value > 9) value = 9;
+            } else if (box.Name == LastResortBox.Name) {
+              if (value < 0) value = 0;
+              if (value > 6) value = 6;
             } else {
               if (value < 1) value = 1;
               if (value > 10 && (box.Name == FatigueBox.Name || box.Name == MortalBox.Name)) value = 10;
@@ -540,6 +581,7 @@ namespace Alternity {
         MessageBox.Show("Numbers only, please");
         return;
       }
+      Dirty = true;
     }
 
     private void RecalcActions() {
@@ -565,6 +607,7 @@ namespace Alternity {
 
     private void ResistModLabels_Click(object sender, MouseEventArgs e) {
       if (EditingLocked) return;
+      Dirty = true;
       Label label = sender as Label;
       if (label != null) {
         int val = (int)label.Tag;
@@ -605,58 +648,12 @@ namespace Alternity {
             xmlser.Serialize(st, npc);
           }
           LoadedFileName = fileName;
+          Dirty = false;
         } catch (Exception ex) {
           MessageBox.Show(ex.Message, "Error Saving");
         }
       }
     }
-    private void SetNPC(NPC npc) {
-      STRResistLabel.Tag = npc.StrengthResistMod;
-      DEXResistLabel.Tag = npc.DexterityResistMod;
-      INTResistLabel.Tag = npc.IntelligenceResistMod;
-      WILResistLabel.Tag = npc.WillResistMod;
-      ActionsLabel.Tag = npc.ExtraActions;
-      LockedButton.Visible = npc.Locked;
-      SetResistModLabelToolTip(STRResistLabel);
-      SetResistModLabelToolTip(DEXResistLabel);
-      SetResistModLabelToolTip(INTResistLabel);
-      SetResistModLabelToolTip(WILResistLabel);
-      ActionCheckAdjustmentBox.Text = npc.ActionCheckAdjustment.ToString();
-      ActionCheckBox.Text = npc.ActionCheck.ToString();
-      ActionsBox.Text = npc.Actions.ToString();
-      ArmorBox.Text = npc.Armor;
-      CONBox.Text = npc.Constitution.ToString();
-      DEXBox.Text = npc.Dexterity.ToString();
-      FatigueBox.Text = npc.FatigueMax.ToString();
-      SetTaken(FatiguePanel, npc.FatigueTaken);
-      INTBox.Text = npc.Intelligence.ToString();
-      MortalBox.Text = npc.MortalMax.ToString();
-      SetTaken(MortalPanel, npc.MortalTaken);
-      NPCNameBox.Text = npc.Name;
-      SkillsBox.Text = npc.Weapons;
-      OtherBox.Text = npc.Other;
-      PERBox.Text = npc.Personality.ToString();
-      STRBox.Text = npc.Strength.ToString();
-      StunBox.Text = npc.StunMax.ToString();
-      SetTaken(StunPanel, npc.StunTaken);
-      WILBox.Text = npc.Will.ToString();
-      WoundBox.Text = npc.WoundMax.ToString();
-      SetTaken(WoundPanel, npc.WoundTaken);
-      this.Tool.Title = npc.ToolTitle;
-      this.Tool.Path = npc.ToolPath;
-      this.Tool.Args = npc.ToolArgs;
-      this.Movement.EasySwim = npc.EasySwim;
-      this.Movement.Fly = npc.Fly;
-      this.Movement.Glide = npc.Glide;
-      this.Movement.Run = npc.Run;
-      this.Movement.Sprint = npc.Sprint;
-      this.Movement.Swim = npc.Swim;
-      this.Movement.Walk = npc.Walk;
-      SetMovementTooltip();
-      SetToolLinkToolTip();
-
-    }
-
     private void SetMovementTooltip() {
       string toolTip = "";
       if (Movement.Glide + Movement.Fly == 0) {
@@ -696,6 +693,53 @@ Fly: {6}
       toolTip1.SetToolTip(MovementButton, toolTip);
     }
 
+    private void SetNPC(NPC npc) {
+      STRResistLabel.Tag = npc.StrengthResistMod;
+      DEXResistLabel.Tag = npc.DexterityResistMod;
+      INTResistLabel.Tag = npc.IntelligenceResistMod;
+      WILResistLabel.Tag = npc.WillResistMod;
+      ActionsLabel.Tag = npc.ExtraActions;
+      LockedButton.Visible = npc.Locked;
+      SetResistModLabelToolTip(STRResistLabel);
+      SetResistModLabelToolTip(DEXResistLabel);
+      SetResistModLabelToolTip(INTResistLabel);
+      SetResistModLabelToolTip(WILResistLabel);
+      ActionCheckAdjustmentBox.Text = npc.ActionCheckAdjustment.ToString();
+      ActionCheckBox.Text = npc.ActionCheck.ToString();
+      ActionsBox.Text = npc.Actions.ToString();
+      ArmorBox.Text = npc.Armor;
+      CONBox.Text = npc.Constitution.ToString();
+      DEXBox.Text = npc.Dexterity.ToString();
+      FatigueBox.Text = npc.FatigueMax.ToString();
+      SetTaken(FatiguePanel, npc.FatigueTaken);
+      INTBox.Text = npc.Intelligence.ToString();
+      MortalBox.Text = npc.MortalMax.ToString();
+      SetTaken(MortalPanel, npc.MortalTaken);
+      NPCNameBox.Text = npc.Name;
+      SkillsBox.Text = npc.Weapons;
+      OtherBox.Text = npc.Other;
+      PERBox.Text = npc.Personality.ToString();
+      STRBox.Text = npc.Strength.ToString();
+      StunBox.Text = npc.StunMax.ToString();
+      SetTaken(StunPanel, npc.StunTaken);
+      WILBox.Text = npc.Will.ToString();
+      WoundBox.Text = npc.WoundMax.ToString();
+      SetTaken(WoundPanel, npc.WoundTaken);
+      LastResortBox.Text = npc.LastResorts.ToString();
+      this.Tool.Title = npc.ToolTitle;
+      this.Tool.Path = npc.ToolPath;
+      this.Tool.Args = npc.ToolArgs;
+      this.Movement.EasySwim = npc.EasySwim;
+      this.Movement.Fly = npc.Fly;
+      this.Movement.Glide = npc.Glide;
+      this.Movement.Run = npc.Run;
+      this.Movement.Sprint = npc.Sprint;
+      this.Movement.Swim = npc.Swim;
+      this.Movement.Walk = npc.Walk;
+      SetMovementTooltip();
+      SetToolLinkToolTip();
+      Dirty = false;
+    }
     private void SetResistModLabelToolTip(Label label) {
       int val = (int)label.Tag;
       string text = "Resist Mod Adjustment: " + val.ToString() + "\r\nClick to increase; right-click to decrease";
@@ -751,7 +795,10 @@ Fly: {6}
         MessageBox.Show("Numbers only, please");
         return;
       }
-      if (box.Text.Length == 0) return;
+      if (box.Text.Length == 0) {
+        return;
+      }
+      Dirty = true;
       try {
         int val = int.Parse(STRBox.Text);
         STRResistLabel.Text = GetResistMod(val, STRResistLabel);
@@ -767,6 +814,7 @@ Fly: {6}
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(box.Text);
         if (val > 0 && val < 21) {
@@ -788,28 +836,45 @@ Fly: {6}
       }
     }
 
+    private void ToolLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      if (!string.IsNullOrEmpty(this.Tool.Path)) {
+        try {
+          ProcessStartInfo psi = new ProcessStartInfo();
+          psi.FileName = this.Tool.Path;
+          if (!string.IsNullOrEmpty(this.Tool.Args)) {
+            psi.Arguments = this.Tool.Args;
+          }
+          Process.Start(psi);
+        } catch (Exception ex) {
+          MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+      } else {
+        var res = MessageBox.Show("No tool set. Set one now?",
+                            "Error",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Exclamation,
+                            MessageBoxDefaultButton.Button2);
+        if (res == System.Windows.Forms.DialogResult.Yes) {
+            SetToolLink();
+        }
+        
+      }
+    }
+
     private void ToolLink_MouseDown(object sender, MouseEventArgs e) {
       if (e.Button == System.Windows.Forms.MouseButtons.Left) {
-        if (!string.IsNullOrEmpty(this.Tool.Path)) {
-          try {
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = this.Tool.Path;
-            if (!string.IsNullOrEmpty(this.Tool.Args)) {
-              psi.Arguments = this.Tool.Args;
-            }
-            Process.Start(psi);
-          } catch (Exception ex) {
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          }
-        } else {
-          MessageBox.Show("No tool set. Right-Click to set one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
+        ToolLink_LinkClicked(ToolLink, null);
       } else if (e.Button == System.Windows.Forms.MouseButtons.Right) {
-        using (ToolDetailForm win = new ToolDetailForm(this.Tool, "Info Link")) {
-          if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-            this.Tool = win.Tool;
-            SetToolLinkToolTip();
-          }
+        SetToolLink();
+      }
+    }
+
+    private void SetToolLink() {
+      using (ToolDetailForm win = new ToolDetailForm(this.Tool, "Set Info Link")) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          this.Tool = win.Tool;
+          Dirty = true;
+          SetToolLinkToolTip();
         }
       }
     }
@@ -838,6 +903,7 @@ Fly: {6}
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(WILBox.Text);
         WILResistLabel.Text = GetResistMod(val, WILResistLabel);
@@ -854,6 +920,7 @@ Fly: {6}
         return;
       }
       if (box.Text.Length == 0) return;
+      Dirty = true;
       try {
         int val = int.Parse(box.Text);
         if (val > 0 && val < 21) {
@@ -865,17 +932,19 @@ Fly: {6}
       }
     }
 
-    private void MovementButton_Click(object sender, EventArgs e) {
-      int str = 0;
-      int dex = 0;
-      int.TryParse(STRBox.Text, out str);
-      int.TryParse(DEXBox.Text, out dex);
-      using (Alternity.Forms.MovementForm win = new Forms.MovementForm(this.Movement, str, dex)) {
-        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-          this.Movement = win.MovementValue;
-          SetMovementTooltip();
-        }
-      }
+    private void OtherBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
+    }
+
+    private void ArmorBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
+    }
+
+    private void SkillsBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
+    }
+
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
     }
   }
 }
