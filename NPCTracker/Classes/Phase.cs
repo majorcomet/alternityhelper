@@ -19,6 +19,7 @@ namespace Alternity {
     Good,
     Ordinary,
     Marginal,
-    Number
+    Number,
+    Roll
   }
 }

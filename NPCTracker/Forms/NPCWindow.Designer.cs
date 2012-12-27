@@ -113,7 +113,7 @@ namespace Alternity {
       this.ActionCheckGoodBox = new System.Windows.Forms.TextBox();
       this.ActionCheckBox = new System.Windows.Forms.TextBox();
       this.ActionCheckPlusBox = new System.Windows.Forms.TextBox();
-      this.label12 = new System.Windows.Forms.Label();
+      this.ActionCheckLabel = new System.Windows.Forms.Label();
       this.WILResistLabel = new System.Windows.Forms.Label();
       this.INTResistLabel = new System.Windows.Forms.Label();
       this.DEXResistLabel = new System.Windows.Forms.Label();
@@ -1075,15 +1075,16 @@ namespace Alternity {
       this.ActionCheckPlusBox.Text = "14+";
       this.ActionCheckPlusBox.Click += new System.EventHandler(this.ActionCheckBox_Click);
       // 
-      // label12
+      // ActionCheckLabel
       // 
-      this.label12.AutoSize = true;
-      this.label12.Location = new System.Drawing.Point(303, 6);
-      this.label12.Name = "label12";
-      this.label12.Size = new System.Drawing.Size(71, 13);
-      this.label12.TabIndex = 3;
-      this.label12.Text = "Action Check";
-      this.toolTip1.SetToolTip(this.label12, "Action Check Score");
+      this.ActionCheckLabel.AutoSize = true;
+      this.ActionCheckLabel.Location = new System.Drawing.Point(303, 6);
+      this.ActionCheckLabel.Name = "ActionCheckLabel";
+      this.ActionCheckLabel.Size = new System.Drawing.Size(71, 13);
+      this.ActionCheckLabel.TabIndex = 3;
+      this.ActionCheckLabel.Text = "Action Check";
+      this.toolTip1.SetToolTip(this.ActionCheckLabel, "Action Check Score (Double-click this label to roll)");
+      this.ActionCheckLabel.DoubleClick += new System.EventHandler(this.ActionCheckLabel_DoubleClick);
       // 
       // WILResistLabel
       // 
@@ -1516,7 +1517,7 @@ namespace Alternity {
       this.Controls.Add(this.MortalPanel);
       this.Controls.Add(this.MortalBox);
       this.Controls.Add(this.FatiguePanel);
-      this.Controls.Add(this.label12);
+      this.Controls.Add(this.ActionCheckLabel);
       this.Controls.Add(this.label16);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.ActionCheckPlusBox);
@@ -1654,7 +1655,7 @@ namespace Alternity {
     private System.Windows.Forms.TextBox ActionCheckGoodBox;
     private System.Windows.Forms.TextBox ActionCheckBox;
     private System.Windows.Forms.TextBox ActionCheckPlusBox;
-    private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.Label ActionCheckLabel;
     private System.Windows.Forms.Label WILResistLabel;
     private System.Windows.Forms.Label INTResistLabel;
     private System.Windows.Forms.Label DEXResistLabel;

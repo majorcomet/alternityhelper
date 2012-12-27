@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionPhases));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.NumberBox = new System.Windows.Forms.TextBox();
@@ -33,6 +34,8 @@
       this.AmazingRadio = new System.Windows.Forms.RadioButton();
       this.OKButton = new System.Windows.Forms.Button();
       this.Cancel_Button = new System.Windows.Forms.Button();
+      this.RandomRollRadio = new System.Windows.Forms.RadioButton();
+      this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -41,6 +44,7 @@
       this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+      this.groupBox1.Controls.Add(this.RandomRollRadio);
       this.groupBox1.Controls.Add(this.NumberBox);
       this.groupBox1.Controls.Add(this.NumberRadio);
       this.groupBox1.Controls.Add(this.MarginalRadio);
@@ -49,7 +53,7 @@
       this.groupBox1.Controls.Add(this.AmazingRadio);
       this.groupBox1.Location = new System.Drawing.Point(12, 12);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(114, 146);
+      this.groupBox1.Size = new System.Drawing.Size(114, 164);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Phase";
@@ -72,6 +76,7 @@
       this.NumberRadio.Size = new System.Drawing.Size(46, 17);
       this.NumberRadio.TabIndex = 4;
       this.NumberRadio.Text = "Roll:";
+      this.toolTip1.SetToolTip(this.NumberRadio, "Select common roll for each NPC");
       this.NumberRadio.UseVisualStyleBackColor = true;
       // 
       // MarginalRadio
@@ -82,6 +87,7 @@
       this.MarginalRadio.Size = new System.Drawing.Size(65, 17);
       this.MarginalRadio.TabIndex = 3;
       this.MarginalRadio.Text = "Marginal";
+      this.toolTip1.SetToolTip(this.MarginalRadio, "Set all NPCs to Marginal");
       this.MarginalRadio.UseVisualStyleBackColor = true;
       // 
       // OrdinaryRadio
@@ -92,6 +98,7 @@
       this.OrdinaryRadio.Size = new System.Drawing.Size(64, 17);
       this.OrdinaryRadio.TabIndex = 2;
       this.OrdinaryRadio.Text = "Ordinary";
+      this.toolTip1.SetToolTip(this.OrdinaryRadio, "Set all NPCs to Ordinary");
       this.OrdinaryRadio.UseVisualStyleBackColor = true;
       // 
       // GoodRadio
@@ -102,6 +109,7 @@
       this.GoodRadio.Size = new System.Drawing.Size(51, 17);
       this.GoodRadio.TabIndex = 1;
       this.GoodRadio.Text = "Good";
+      this.toolTip1.SetToolTip(this.GoodRadio, "Set all NPCs to Good");
       this.GoodRadio.UseVisualStyleBackColor = true;
       // 
       // AmazingRadio
@@ -114,13 +122,14 @@
       this.AmazingRadio.TabIndex = 0;
       this.AmazingRadio.TabStop = true;
       this.AmazingRadio.Text = "Amazing";
+      this.toolTip1.SetToolTip(this.AmazingRadio, "Set all NPCs to Amazing");
       this.AmazingRadio.UseVisualStyleBackColor = true;
       // 
       // OKButton
       // 
       this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.OKButton.Location = new System.Drawing.Point(12, 167);
+      this.OKButton.Location = new System.Drawing.Point(12, 185);
       this.OKButton.Name = "OKButton";
       this.OKButton.Size = new System.Drawing.Size(53, 23);
       this.OKButton.TabIndex = 1;
@@ -132,18 +141,29 @@
       // 
       this.Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.Cancel_Button.Location = new System.Drawing.Point(73, 167);
+      this.Cancel_Button.Location = new System.Drawing.Point(73, 185);
       this.Cancel_Button.Name = "Cancel_Button";
       this.Cancel_Button.Size = new System.Drawing.Size(53, 23);
       this.Cancel_Button.TabIndex = 2;
       this.Cancel_Button.Text = "Cancel";
       this.Cancel_Button.UseVisualStyleBackColor = true;
       // 
+      // RandomRollRadio
+      // 
+      this.RandomRollRadio.AutoSize = true;
+      this.RandomRollRadio.Location = new System.Drawing.Point(6, 138);
+      this.RandomRollRadio.Name = "RandomRollRadio";
+      this.RandomRollRadio.Size = new System.Drawing.Size(65, 17);
+      this.RandomRollRadio.TabIndex = 6;
+      this.RandomRollRadio.Text = "Random";
+      this.toolTip1.SetToolTip(this.RandomRollRadio, "Roll each NPC individually");
+      this.RandomRollRadio.UseVisualStyleBackColor = true;
+      // 
       // ActionPhases
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(138, 198);
+      this.ClientSize = new System.Drawing.Size(138, 216);
       this.Controls.Add(this.Cancel_Button);
       this.Controls.Add(this.OKButton);
       this.Controls.Add(this.groupBox1);
@@ -154,7 +174,7 @@
       this.MinimizeBox = false;
       this.Name = "ActionPhases";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Action Phase";
+      this.Text = "Set Action Phase";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActionPhases_KeyDown);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
@@ -173,5 +193,7 @@
     private System.Windows.Forms.Button Cancel_Button;
     private System.Windows.Forms.TextBox NumberBox;
     private System.Windows.Forms.RadioButton NumberRadio;
+    private System.Windows.Forms.RadioButton RandomRollRadio;
+    private System.Windows.Forms.ToolTip toolTip1;
   }
 }

@@ -27,6 +27,7 @@ namespace Alternity {
       OrdinaryRadio.Tag = Phase.Ordinary;
       MarginalRadio.Tag = Phase.Marginal;
       NumberRadio.Tag = Phase.Number;
+      RandomRollRadio.Tag = Phase.Roll;
     }
     public Phase ChosenPhase {
       get {
@@ -74,7 +75,7 @@ namespace Alternity {
         NumberRadio.Focus();
         e.Handled = true;
       } else if (e.KeyCode == Keys.Down) {
-        AmazingRadio.Focus();
+        RandomRollRadio.Focus();
         e.Handled = true;
       }
     }

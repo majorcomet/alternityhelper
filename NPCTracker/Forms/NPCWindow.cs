@@ -25,12 +25,14 @@ namespace Alternity {
     private const int Max_ResistMod = 6;
     private TextBox[] actionBoxes;
     private TextBox[] ControlsToReadOnly;
+    private bool Dirty = false;
     private string LoadedFileName = "";
     private Movement Movement = new Movement();
     private Regex NotValidFileName = new Regex("[^a-zA-Z0-9_.,' -]");
     private Regex NumbersAndSigns = new Regex("^[-+0-9]*$");
     private Regex NumbersOnly = new Regex("^[0-9]*$");
-    private bool Dirty = false;
+    private Random random = new Random();
+
     public MainForm() {
       InitializeComponent();
       this.Load += MainForm_Load;
@@ -82,6 +84,9 @@ namespace Alternity {
             break;
           case Phase.Amazing:
             ActionCheckBox_Click(ActionCheckAmazingBox, null);
+            break;
+          case Phase.Roll:
+            ActionCheckLabel_DoubleClick(ActionCheckLabel, null);
             break;
           case Phase.Number:
             try {
@@ -192,6 +197,51 @@ namespace Alternity {
       }
     }
 
+    public void ActionCheckLabel_DoubleClick(object sender, EventArgs e) {
+      try {
+        int adj = 0;
+        string boxVal = ActionCheckAdjustmentBox.Text.Trim("+".ToCharArray());
+        int.TryParse(boxVal, out adj);
+        int res = MakeRoll(20);
+        int mod = 0;
+        int modDir = 1;
+        if (adj < 0) modDir = -1;
+        adj = Math.Abs(adj);
+        switch (adj) {
+          case 5:
+            mod = MakeRoll(20);
+            break;
+          case 4:
+            mod = MakeRoll(12);
+            break;
+          case 3:
+            mod = MakeRoll(8);
+            break;
+          case 2:
+            mod = MakeRoll(6);
+            break;
+          case 1:
+            mod = MakeRoll(4);
+            break;
+        }
+        res += (modDir * mod);
+        TextBox[] boxes = { ActionCheckAmazingBox, ActionCheckGoodBox, ActionCheckBox };
+        foreach (var box in boxes) {
+          adj = int.Parse(box.Text);
+          if (res <= adj) {
+            ActionCheckBox_Click(box, null);
+            return;
+          }
+        }
+        ActionCheckBox_Click(ActionCheckPlusBox, null);
+      } catch (Exception ex) {
+        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+    }
+    private int MakeRoll(int die) {
+      return random.Next(1, (die + 1));
+    }
+
     private void ActionsLabel_Click(object sender, MouseEventArgs e) {
       if (EditingLocked) return;
       Dirty = true;
@@ -205,6 +255,10 @@ namespace Alternity {
       if (adj > 3) adj = 3;
       ActionsLabel.Tag = adj;
       RecalcActions();
+    }
+
+    private void ArmorBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
     }
 
     private void ArmorSetButton_Click(object sender, EventArgs e) {
@@ -441,6 +495,18 @@ namespace Alternity {
       }
     }
 
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+      if (Dirty) {
+        var res = MessageBox.Show("Save " + NPCNameBox.Text + " before exiting?", "Closing",
+           MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+        if (res == System.Windows.Forms.DialogResult.Yes) {
+          SaveButton_Click(SaveButton, null);
+        } else if (res == System.Windows.Forms.DialogResult.Cancel) {
+          e.Cancel = true;
+        }
+      }
+    }
+
     private void MainForm_KeyUp(object sender, KeyEventArgs e) {
       if (e.KeyCode == Keys.K && e.Modifiers == Keys.Control) {
         KOCheckBox.Checked = !KOCheckBox.Checked;
@@ -544,8 +610,8 @@ namespace Alternity {
                 break;
             }
             if (box.Name == ActionCheckAdjustmentBox.Name) {
-              if (value < -9) value = -9;
-              if (value > 9) value = 9;
+              if (value < -5) value = -5;
+              if (value > 5) value = 5;
             } else if (box.Name == LastResortBox.Name) {
               if (value < 0) value = 0;
               if (value > 6) value = 6;
@@ -558,6 +624,10 @@ namespace Alternity {
           } catch { }
         }
       }
+    }
+
+    private void OtherBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
     }
 
     private void OtherInfoButton_Click(object sender, EventArgs e) {
@@ -762,6 +832,16 @@ Fly: {6}
       }
     }
 
+    private void SetToolLink() {
+      using (ToolDetailForm win = new ToolDetailForm(this.Tool, "Set Info Link")) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          this.Tool = win.Tool;
+          Dirty = true;
+          SetToolLinkToolTip();
+        }
+      }
+    }
+
     private void SetToolLinkToolTip() {
       if (string.IsNullOrEmpty(this.Tool.Title) || string.IsNullOrEmpty(this.Tool.Path)) {
         toolTip1.SetToolTip(ToolLink, "No tool set.");
@@ -787,6 +867,10 @@ Fly: {6}
         " " +
         string.Format("({1}/{0}m)", MortalBox.Text, CountChecked(MortalPanel))
         + (KOCheckBox.Checked ? " **KO**" : "");
+    }
+
+    private void SkillsBox_TextChanged(object sender, EventArgs e) {
+      Dirty = true;
     }
 
     private void STRBox_TextChanged(object sender, EventArgs e) {
@@ -855,9 +939,9 @@ Fly: {6}
                             MessageBoxIcon.Exclamation,
                             MessageBoxDefaultButton.Button2);
         if (res == System.Windows.Forms.DialogResult.Yes) {
-            SetToolLink();
+          SetToolLink();
         }
-        
+
       }
     }
 
@@ -868,17 +952,6 @@ Fly: {6}
         SetToolLink();
       }
     }
-
-    private void SetToolLink() {
-      using (ToolDetailForm win = new ToolDetailForm(this.Tool, "Set Info Link")) {
-        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-          this.Tool = win.Tool;
-          Dirty = true;
-          SetToolLinkToolTip();
-        }
-      }
-    }
-
     private void TurnRed(TextBox box) {
       foreach (var bx in actionBoxes) {
         bx.BackColor = (Color)bx.Tag;
@@ -929,30 +1002,6 @@ Fly: {6}
         SetWindowName();
       } catch (Exception ex) {
         MessageBox.Show(ex.Message, "Error");
-      }
-    }
-
-    private void OtherBox_TextChanged(object sender, EventArgs e) {
-      Dirty = true;
-    }
-
-    private void ArmorBox_TextChanged(object sender, EventArgs e) {
-      Dirty = true;
-    }
-
-    private void SkillsBox_TextChanged(object sender, EventArgs e) {
-      Dirty = true;
-    }
-
-    private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
-      if (Dirty) {
-        var res = MessageBox.Show("Save " + NPCNameBox.Text + " before exiting?", "Closing",
-           MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-        if (res == System.Windows.Forms.DialogResult.Yes) {
-          SaveButton_Click(SaveButton, null);
-        } else if (res == System.Windows.Forms.DialogResult.Cancel) {
-          e.Cancel = true;
-        }
       }
     }
   }
