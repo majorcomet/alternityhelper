@@ -1,9 +1,9 @@
-/*
- * Alternity RPG NPC Tracker/Helper
- * By Andrew Barber.
- * 
- * Licensed: CC BY-NC 3.0
- * http://creativecommons.org/licenses/by-nc/3.0/
- */
 
-/PythagoreanDistance is a quick program for calculating 2D distances, which I find frequent use for during Alternity games.
+ Alternity RPG NPC Tracker/Helper
+ By Andrew Barber.
+ 
+ Licensed: CC BY-NC 3.0
+ http://creativecommons.org/licenses/by-nc/3.0/
+
+ Github Project: http://github.com/majorcomet/alternityhelper
+ Github Wiki: http://github.com/majorcomet/alternityhelper/wiki
