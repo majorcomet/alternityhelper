@@ -239,5 +239,21 @@ namespace Alternity {
         win.ShowDialog();
       }
     }
+
+    private void armorToolStripMenuItem_Click(object sender, EventArgs e) {
+      using (Alternity.Forms.TextEditor win = new Forms.TextEditor("Edit Armor", Armors.ArmorFileName, Armors.DefaultArmorFileName)) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          Armors.ReloadArmor();
+        }
+      }
+    }
+
+    private void weaponsToolStripMenuItem_Click(object sender, EventArgs e) {
+      using (Alternity.Forms.TextEditor win = new Forms.TextEditor("Edit Weapons", Weapons.WeaponFileName, Weapons.DefaultWeaponFileName)) {
+        if (win.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+          Weapons.ReloadWeapons();
+        }
+      }
+    }
   }
 }

@@ -35,17 +35,26 @@ namespace Alternity {
   }
   public static class Armors {
     public static List<Armor> Items;
+    private const string ArmorTxt = "Armor.txt";
+    public static string ArmorFileName = Path.Combine(SaveLocation.DataLocation, ArmorTxt);
+    public static string DefaultArmorFileName = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), ArmorTxt);
     static Armors() {
+      AssureArmorFile();
       ReloadArmor();
+    }
+
+    private static void AssureArmorFile() {
+      if (!File.Exists(ArmorFileName)) {
+        File.Copy(DefaultArmorFileName, ArmorFileName);
+      }
     }
     public static void ReloadArmor() {
       Items = new List<Armor>();
-      string ArmorFileName = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Armor.txt");
       try {
         using (StreamReader rd = new StreamReader(ArmorFileName)) {
           string line = rd.ReadLine();
           while (line != null) {
-            if (!line.Trim().StartsWith("//")) {
+            if (!line.Trim().StartsWith("//") && line.Trim().Length > 0) {
               Items.Add(new Armor(line));
             }
             line = rd.ReadLine();

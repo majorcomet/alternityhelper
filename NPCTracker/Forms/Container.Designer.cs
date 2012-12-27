@@ -48,6 +48,9 @@ namespace Alternity {
       this.setAllActionPhasesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
       this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.armorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.weaponsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
       this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.renameWindowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,11 +185,39 @@ namespace Alternity {
       // 
       // editToolStripMenuItem
       // 
+      this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.armorToolStripMenuItem,
+            this.toolsToolStripMenuItem1,
+            this.weaponsToolStripMenuItem});
       this.editToolStripMenuItem.Name = "editToolStripMenuItem";
       this.editToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
       this.editToolStripMenuItem.Tag = "Keep";
-      this.editToolStripMenuItem.Text = "&Edit Tools...";
+      this.editToolStripMenuItem.Text = "&Edit";
       this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+      // 
+      // armorToolStripMenuItem
+      // 
+      this.armorToolStripMenuItem.Name = "armorToolStripMenuItem";
+      this.armorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.armorToolStripMenuItem.Tag = "Keep";
+      this.armorToolStripMenuItem.Text = "&Armor Data";
+      this.armorToolStripMenuItem.Click += new System.EventHandler(this.armorToolStripMenuItem_Click);
+      // 
+      // toolsToolStripMenuItem1
+      // 
+      this.toolsToolStripMenuItem1.Name = "toolsToolStripMenuItem1";
+      this.toolsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+      this.toolsToolStripMenuItem1.Tag = "Keep";
+      this.toolsToolStripMenuItem1.Text = "Custom &Tools";
+      this.toolsToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+      // 
+      // weaponsToolStripMenuItem
+      // 
+      this.weaponsToolStripMenuItem.Name = "weaponsToolStripMenuItem";
+      this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.weaponsToolStripMenuItem.Tag = "Keep";
+      this.weaponsToolStripMenuItem.Text = "&Weapons Data";
+      this.weaponsToolStripMenuItem.Click += new System.EventHandler(this.weaponsToolStripMenuItem_Click);
       // 
       // toolStripMenuItem5
       // 
@@ -298,5 +329,8 @@ namespace Alternity {
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem voidCorpIDGenToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem armorToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem weaponsToolStripMenuItem;
   }
 }

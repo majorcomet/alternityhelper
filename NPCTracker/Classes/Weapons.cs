@@ -35,17 +35,26 @@ namespace Alternity {
   }
   public static class Weapons {
     public static List<Weapon> Items;
+    private const string WeaponsTxt = "Weapons.txt";
+    public static string DefaultWeaponFileName = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), WeaponsTxt);
+    public static string WeaponFileName = Path.Combine(SaveLocation.DataLocation, WeaponsTxt);
     static Weapons() {
+      AssureWeaponFile();
       ReloadWeapons();
     }
+    private static void AssureWeaponFile() {
+      if (!File.Exists(WeaponFileName)) {
+        File.Copy(DefaultWeaponFileName, WeaponFileName);
+      }
+    }
+
     public static void ReloadWeapons() {
       Items = new List<Weapon>();
-      string WeaponFileName = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Weapons.txt");
       try {
         using (StreamReader rd = new StreamReader(WeaponFileName)) {
           string line = rd.ReadLine();
           while (line != null) {
-            if (!line.Trim().StartsWith("//")) {
+            if (!line.Trim().StartsWith("//") && line.Trim().Length > 0) {
               Items.Add(new Weapon(line));
             }
             line = rd.ReadLine();
