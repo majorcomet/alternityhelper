@@ -91,6 +91,9 @@ PSIONICS|-
 ◦  Pyrotechnics Rank 1         |Pyrotechnics (1)     0  -  10/20/30      En/O  d4+2w/d6+2w/d8+2w
 ◦  Pyrotechnics Rank 5         |Pyrotechnics (5)     0  -  10/20/30      En/O  d6+2w/d8+2w/d4m
 ◦  Pyrotechnics Rank 9         |Pyrotechnics (9)     0  -  10/20/30      En/O  d8+2w/d4m/d4+2m
+◦  Electrokinetics Rank 1      |Electrokinetics (1)  0  -  4/8/16        N/A   d4+2s/d6+2s/d4w
+◦  Electrokinetics Rank 5      |Electrokinetics (5)  0  -  4/8/16        N/A   d6+2s/d4w/d4+2w
+◦  Electrokinetics Rank 9      |Electrokinetics (9)  0  -  4/8/16        N/A   d4+2w/d6+2w/d8+2w
  |-
 KROATH WEAPONS|-
 ◦  Dark Plasma Rifle           |Dark Plasma Rifle    0  -  80/200/400    En/G  d8+1w/2d6w/2d6+3w  F
